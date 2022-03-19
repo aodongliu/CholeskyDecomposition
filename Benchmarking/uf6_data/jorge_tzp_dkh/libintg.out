@@ -1,0 +1,2386 @@
+ChronusQ Job Started: Wed Aug 11 10:14:20 2021
+
+    ______ __                                      ____  
+   / ____// /_   _____ ____   ____   __  __ _____ / __ \ 
+  / /    / __ \ / ___// __ \ / __ \ / / / // ___// / / / 
+ / /___ / / / // /   / /_/ // / / // /_/ /(__  )/ /_/ /  
+ \____//_/ /_//_/    \____//_/ /_/ \__,_//____/ \___\_\  
+
+Release Version: 0.5.0
+
+
+Contributors List:
+================================================================================
+Name                     Institution
+--------------------------------------------------------
+Xiaosong Li              University of Washington
+David Williams-Young     Lawrence Berkeley National Lab
+Edward Valeev            Virginia Tech
+Eugene DePrince III      Florida State University
+Sharon Hammes-Schiffer   Yale University
+Qiming Sun               AxiomQuant
+Alessio Petrone          University of Washington
+Andrew Wildman           University of Washington
+Hang Hu                  University of Washington
+Tianyuan Zhang           University of Washington
+Torin Stetina            University of Washington
+Adam Grofe               University of Washington
+Brandon Cooper           Florida State University
+Chad Hoyer               University of Washington
+Hongbin Liu              University of Washington
+Joshua Goings            University of Washington
+Lauren Koulias           University of Washington
+Lixin Lu                 University of Washington
+Luning Zhao              University of Washington
+Shichao Sun              University of Washington
+Xiaolin Liu              University of Washington
+--------------------------------------------------------
+
+
+
+Input File:
+================================================================================
+#
+#  UF6/Jorge_TZP_DKH: SCF
+#  #libint
+#  SERIAL
+#
+#  Molecule Specification 
+
+[Molecule]
+charge = 0
+mult = 1
+geom:
+ U  0.00000  0.00000  0.00000
+ F  1.99400  0.00000  0.00000
+ F  0.00000  1.99400  0.00000
+ F  0.00000  0.00000  1.99400
+ F -1.99400  0.00000  0.00000
+ F  0.00000 -1.99400  0.00000
+ F  0.00000  0.00000 -1.99400
+
+[QM]
+reference = GHF
+job = SCF
+x2ctype = OneE
+atomicx2c = ALH
+
+
+[SCF]
+guess = core
+damp = false
+nkeep = 10
+maxiter = 12800
+ENETOL = 1e-8
+
+[INTS]
+alg = incore
+ri  = dynamiceri
+rithreshold = 1e-4
+risigma = 1e-2
+ribuild4index = False
+rimaxqual = 1000
+libcint = false
+RIGENCONTR = TRUE
+
+[MISC]
+nsmp = 28
+mem = 50 GB
+
+[BASIS]
+definebasis = true
+basisdef :
+ ****
+ F     0
+ S    5   1.00
+   16736.04332217             0.0024626
+    2517.47266937             0.0137866
+     575.95217890             0.0657619
+     164.57735695             0.2447183
+      54.27385737             0.6732703
+ S    2   1.00
+      19.67931067             0.5665443
+       7.49543072             0.4334556
+ S    1   1.00
+       1.88568025             1.0000000
+ S    1   1.00
+       0.97986789             1.0000000
+ S    1   1.00
+       0.32385317             1.0000000
+ P    4   1.00
+      80.49602312             0.0111473
+      18.65399340             0.0763886
+       5.70273743             0.2928197
+       1.95547755             0.6196442
+ P    1   1.00
+       0.68295355             1.0000000
+ P    1   1.00
+       0.22044626             1.0000000
+ D    1   1.00
+       3.18146999             1.0000000
+ D    1   1.00
+       0.89032420             1.0000000
+ F    1   1.00
+       1.99355999             1.0000000
+ ****
+ U     0
+ S    8   1.00
+ 16067111.08858358            0.0073166
+ 2591107.39091973             0.0179192
+  687360.34425514             0.0313212
+  247360.72732385             0.0492459
+   98808.67388679             0.0881153
+   40930.95428862             0.1421039
+   17899.31962169             0.2494703
+    7632.57413710             0.4145072
+ S    3   1.00
+    3157.85732930            -0.5108482
+    1331.08763619            -0.3670703
+     586.82108246            -0.1220813
+ S    1   1.00
+     246.68295674            -1.0000000
+ S    1   1.00
+      44.27816026             1.0000000
+ S    1   1.00
+       9.03483455            -1.0000000
+ S    1   1.00
+       1.87659322            -1.0000000
+ S    1   1.00
+       0.44947824             1.0000000
+ S    1   1.00
+       0.23619901            -1.0000000
+ S    1   1.00
+       0.04226898             1.0000000
+ S    1   1.00
+       0.01943632             1.0000000
+ P    7   1.00
+   50603.59376245             0.0057779
+   12916.25008455             0.0140045
+    4863.44862380             0.0368085
+    2094.99099898             0.0873142
+     894.83182076             0.2339438
+     389.24794680             0.3454469
+     176.62372159             0.2767040
+ P    2   1.00
+      76.64186955            -0.6089247
+      37.22980174            -0.3910752
+ P    2   1.00
+      16.18769810             0.5583341
+       8.11989779             0.4416658
+ P    2   1.00
+       3.28776587            -0.6679533
+       1.56360067            -0.3320466
+ P    1   1.00
+       0.51269918             1.0000000
+ P    1   1.00
+       0.19661867             1.0000000
+ D    7   1.00
+    7958.05338025             0.0009956
+    2519.26127605             0.0048252
+    1083.99920401             0.0175080
+     519.85344985             0.0583256
+     247.67064113             0.1787357
+     118.52049894             0.3577545
+      57.91786834             0.3818553
+ D    2   1.00
+      14.06353831            -0.5957214
+       7.06225127            -0.4042785
+ D    1   1.00
+      28.35572139            -1.0000000
+ D    1   1.00
+       3.45065998             1.0000000
+ D    1   1.00
+       1.65220431             1.0000000
+ D    1   1.00
+       0.71553089             1.0000000
+ D    1   1.00
+       0.28370929             1.0000000
+ F    4   1.00
+     263.44608074             0.0204195
+      89.17949904             0.1248715
+      35.31536973             0.3608100
+      14.76296206             0.4938988
+ F    1   1.00
+       6.17011128             1.0000000
+ F    1   1.00
+       2.09101340             1.0000000
+ F    1   1.00
+       0.63651626             1.0000000
+ G    1   1.00
+       2.89868186             1.0000000
+ G    1   1.00
+       0.91750999             1.0000000
+ ****
+
+
+
+
+================================================================================
+
+
+
+
+
+  *** Allocating 50 GB *** 
+  *** ChronusQ will use 28 OpenMP threads ***
+  *** ChronusQ will use 1 MPI Processes ***
+
+
+
+
+Molecular Information:
+================================================================================
+
+  NAtoms                      7
+  Total Electrons             146
+  Particle Number Charge      0              e
+  Molecular Charge            0.000          e
+  Nuclear Repulsion Energy    1.53307675e+03 Eh
+
+  Center of Mass              { 0.00000e+00    ,0.00000e+00    ,0.00000e+00    }
+  Center of Charges           { 0.00000e+00    ,0.00000e+00    ,0.00000e+00    }
+
+  Moment of Inertia           { 1.07901e+03    ,0.00000e+00    ,0.00000e+00    ,
+                                0.00000e+00    ,1.07901e+03    ,0.00000e+00    ,
+                                0.00000e+00    ,0.00000e+00    ,1.07901e+03    }
+
+  Geometry:                   
+  ----------------------------------------------------------------------------  
+    Element   ZNuc     Mass (AMU)       X (Bohr)       Y (Bohr)       Z (Bohr)
+
+    U-238     92.0     2.38051e+02   0.00000e+00    0.00000e+00    0.00000e+00
+    F-19      9.0      1.89984e+01   3.76811e+00    0.00000e+00    0.00000e+00
+    F-19      9.0      1.89984e+01   0.00000e+00    3.76811e+00    0.00000e+00
+    F-19      9.0      1.89984e+01   0.00000e+00    0.00000e+00    3.76811e+00
+    F-19      9.0      1.89984e+01  -3.76811e+00    0.00000e+00    0.00000e+00
+    F-19      9.0      1.89984e+01   0.00000e+00   -3.76811e+00    0.00000e+00
+    F-19      9.0      1.89984e+01   0.00000e+00    0.00000e+00   -3.76811e+00
+
+================================================================================
+
+
+Basis Set Information:
+================================================================================
+
+  NBasis                   295
+  NPrimitive               471
+  NShell                   95
+  Max Primitive            8
+  Max L                    4
+
+
+  Shell Information:
+  ----------------------------------------------------------------------------  
+    #    L          Exponents        Normalized Contraction
+
+    0    0         1.6067e+07                    1.5715e+03
+                   2.5911e+06                    9.7944e+02
+                   6.8736e+05                    6.3281e+02
+                   2.4736e+05                    4.6229e+02
+                   9.8809e+04                    4.1562e+02
+                   4.0931e+04                    3.4609e+02
+                   1.7899e+04                    3.2673e+02
+                   7.6326e+03                    2.8647e+02
+
+    1    0         3.1579e+03                   -1.6215e+02
+                   1.3311e+03                   -6.0952e+01
+                   5.8682e+02                   -1.0968e+01
+
+    2    0         2.4668e+02                   -4.4362e+01
+
+    3    0         4.4278e+01                    1.2234e+01
+
+    4    0         9.0348e+00                   -3.7141e+00
+
+    5    0         1.8766e+00                   -1.1427e+00
+
+    6    0         4.4948e-01                    3.9124e-01
+
+    7    0         2.3620e-01                   -2.4147e-01
+
+    8    0         4.2269e-02                    6.6440e-02
+
+    9    0         1.9436e-02                    3.7100e-02
+
+    10   1         5.0604e+04                    7.4492e+03
+                   1.2916e+04                    3.2757e+03
+                   4.8634e+03                    2.5395e+03
+                   2.0950e+03                    2.1022e+03
+                   8.9483e+02                    1.9449e+03
+                   3.8925e+02                    1.0146e+03
+                   1.7662e+02                    3.0265e+02
+
+    11   1         7.6642e+01                   -2.0412e+02
+                   3.7230e+01                   -5.3165e+01
+
+    12   1         1.6188e+01                    2.6752e+01
+                   8.1199e+00                    8.9335e+00
+
+    13   1         3.2878e+00                   -4.3683e+00
+                   1.5636e+00                   -8.5762e-01
+
+    14   1         5.1270e-01                    6.1840e-01
+
+    15   1         1.9662e-01                    1.8663e-01
+
+    16   2         7.9581e+03                    1.2795e+04
+                   2.5193e+03                    8.2846e+03
+                   1.0840e+03                    6.8718e+03
+                   5.1985e+02                    6.3268e+03
+                   2.4767e+02                    5.2969e+03
+                   1.1852e+02                    2.9191e+03
+                   5.7918e+01                    8.8992e+02
+
+    17   2         1.4064e+01                   -1.0490e+02
+                   7.0623e+00                   -2.1326e+01
+
+    18   2         2.8356e+01                   -5.7350e+02
+
+    19   2         3.4507e+00                    1.4379e+01
+
+    20   2         1.6522e+00                    3.9630e+00
+
+    21   2         7.1553e-01                    9.1624e-01
+
+    22   2         2.8371e-01                    1.8153e-01
+
+    23   3         2.6345e+02                    9.9626e+03
+                   8.9179e+01                    5.3251e+03
+                   3.5315e+01                    1.9141e+03
+                   1.4763e+01                    3.6817e+02
+
+    24   3         6.1701e+00                    8.8331e+01
+
+    25   3         2.0910e+00                    7.7403e+00
+
+    26   3         6.3652e-01                    5.3275e-01
+
+    27   4         2.8987e+00                    2.0772e+01
+
+    28   4         9.1751e-01                    8.7824e-01
+
+    29   0         1.6736e+04                    2.8003e+00
+                   2.5175e+03                    3.7866e+00
+                   5.7595e+02                    5.9749e+00
+                   1.6458e+02                    8.6899e+00
+                   5.4274e+01                    1.0404e+01
+
+    30   0         1.9679e+01                    3.9250e+00
+                   7.4954e+00                    1.4559e+00
+
+    31   0         1.8857e+00                    1.1469e+00
+
+    32   0         9.7987e-01                    7.0192e-01
+
+    33   0         3.2385e-01                    3.0596e-01
+
+    34   1         8.0496e+01                    4.3087e+00
+                   1.8654e+01                    4.7474e+00
+                   5.7027e+00                    4.1368e+00
+                   1.9555e+00                    2.2970e+00
+
+    35   1         6.8295e-01                    8.8497e-01
+
+    36   1         2.2045e-01                    2.1531e-01
+
+    37   2         3.1815e+00                    1.2474e+01
+
+    38   2         8.9032e-01                    1.3431e+00
+
+    39   3         1.9936e+00                    6.9522e+00
+
+    40   0         1.6736e+04                    2.8003e+00
+                   2.5175e+03                    3.7866e+00
+                   5.7595e+02                    5.9749e+00
+                   1.6458e+02                    8.6899e+00
+                   5.4274e+01                    1.0404e+01
+
+    41   0         1.9679e+01                    3.9250e+00
+                   7.4954e+00                    1.4559e+00
+
+    42   0         1.8857e+00                    1.1469e+00
+
+    43   0         9.7987e-01                    7.0192e-01
+
+    44   0         3.2385e-01                    3.0596e-01
+
+    45   1         8.0496e+01                    4.3087e+00
+                   1.8654e+01                    4.7474e+00
+                   5.7027e+00                    4.1368e+00
+                   1.9555e+00                    2.2970e+00
+
+    46   1         6.8295e-01                    8.8497e-01
+
+    47   1         2.2045e-01                    2.1531e-01
+
+    48   2         3.1815e+00                    1.2474e+01
+
+    49   2         8.9032e-01                    1.3431e+00
+
+    50   3         1.9936e+00                    6.9522e+00
+
+    51   0         1.6736e+04                    2.8003e+00
+                   2.5175e+03                    3.7866e+00
+                   5.7595e+02                    5.9749e+00
+                   1.6458e+02                    8.6899e+00
+                   5.4274e+01                    1.0404e+01
+
+    52   0         1.9679e+01                    3.9250e+00
+                   7.4954e+00                    1.4559e+00
+
+    53   0         1.8857e+00                    1.1469e+00
+
+    54   0         9.7987e-01                    7.0192e-01
+
+    55   0         3.2385e-01                    3.0596e-01
+
+    56   1         8.0496e+01                    4.3087e+00
+                   1.8654e+01                    4.7474e+00
+                   5.7027e+00                    4.1368e+00
+                   1.9555e+00                    2.2970e+00
+
+    57   1         6.8295e-01                    8.8497e-01
+
+    58   1         2.2045e-01                    2.1531e-01
+
+    59   2         3.1815e+00                    1.2474e+01
+
+    60   2         8.9032e-01                    1.3431e+00
+
+    61   3         1.9936e+00                    6.9522e+00
+
+    62   0         1.6736e+04                    2.8003e+00
+                   2.5175e+03                    3.7866e+00
+                   5.7595e+02                    5.9749e+00
+                   1.6458e+02                    8.6899e+00
+                   5.4274e+01                    1.0404e+01
+
+    63   0         1.9679e+01                    3.9250e+00
+                   7.4954e+00                    1.4559e+00
+
+    64   0         1.8857e+00                    1.1469e+00
+
+    65   0         9.7987e-01                    7.0192e-01
+
+    66   0         3.2385e-01                    3.0596e-01
+
+    67   1         8.0496e+01                    4.3087e+00
+                   1.8654e+01                    4.7474e+00
+                   5.7027e+00                    4.1368e+00
+                   1.9555e+00                    2.2970e+00
+
+    68   1         6.8295e-01                    8.8497e-01
+
+    69   1         2.2045e-01                    2.1531e-01
+
+    70   2         3.1815e+00                    1.2474e+01
+
+    71   2         8.9032e-01                    1.3431e+00
+
+    72   3         1.9936e+00                    6.9522e+00
+
+    73   0         1.6736e+04                    2.8003e+00
+                   2.5175e+03                    3.7866e+00
+                   5.7595e+02                    5.9749e+00
+                   1.6458e+02                    8.6899e+00
+                   5.4274e+01                    1.0404e+01
+
+    74   0         1.9679e+01                    3.9250e+00
+                   7.4954e+00                    1.4559e+00
+
+    75   0         1.8857e+00                    1.1469e+00
+
+    76   0         9.7987e-01                    7.0192e-01
+
+    77   0         3.2385e-01                    3.0596e-01
+
+    78   1         8.0496e+01                    4.3087e+00
+                   1.8654e+01                    4.7474e+00
+                   5.7027e+00                    4.1368e+00
+                   1.9555e+00                    2.2970e+00
+
+    79   1         6.8295e-01                    8.8497e-01
+
+    80   1         2.2045e-01                    2.1531e-01
+
+    81   2         3.1815e+00                    1.2474e+01
+
+    82   2         8.9032e-01                    1.3431e+00
+
+    83   3         1.9936e+00                    6.9522e+00
+
+    84   0         1.6736e+04                    2.8003e+00
+                   2.5175e+03                    3.7866e+00
+                   5.7595e+02                    5.9749e+00
+                   1.6458e+02                    8.6899e+00
+                   5.4274e+01                    1.0404e+01
+
+    85   0         1.9679e+01                    3.9250e+00
+                   7.4954e+00                    1.4559e+00
+
+    86   0         1.8857e+00                    1.1469e+00
+
+    87   0         9.7987e-01                    7.0192e-01
+
+    88   0         3.2385e-01                    3.0596e-01
+
+    89   1         8.0496e+01                    4.3087e+00
+                   1.8654e+01                    4.7474e+00
+                   5.7027e+00                    4.1368e+00
+                   1.9555e+00                    2.2970e+00
+
+    90   1         6.8295e-01                    8.8497e-01
+
+    91   1         2.2045e-01                    2.1531e-01
+
+    92   2         3.1815e+00                    1.2474e+01
+
+    93   2         8.9032e-01                    1.3431e+00
+
+    94   3         1.9936e+00                    6.9522e+00
+
+
+================================================================================
+
+
+  Property Integrals:
+    * Will Compute Length Gauge Electric Multipoles up to Octupole
+    * Will Compute Velocity Gauge Electric Multipoles up to Octupole
+    * Will Compute Magnetic Multipoles up to Quadrupole
+
+  Electron repulsion integral:
+        Contraction Algorithm:INCORE Cholesky decomposition RI (Gemm)
+
+================================================================================
+
+  *** Parsing QM.REFERENCE options ***
+  *** Auto-determination of wave function field: AUTO -> COMPLEX ***
+
+
+
+Hamiltonian Options:
+================================================================================
+
+                                 Integral:
+  ----------------------------------------------------------------------------  
+                               Basis Type:REAL_GTO
+                      Finite Width Nuclei:True
+                            Using Libcint:False
+
+                    One-Component Options:
+  ----------------------------------------------------------------------------  
+           Perturbative Scalar Relativity:Off
+       Perturbative Spin-orbit Relativity:Off
+
+                    Two-Component Options:
+  ----------------------------------------------------------------------------  
+           One-Electron Scalar Relativity:On
+       One-Electron Spin-orbit Relativity:On
+              Boettger Spin-orbit Scaling:On
+             Atomic Mean Field Spin-orbit:Off
+
+                   Four-Component Options:
+  ----------------------------------------------------------------------------  
+                        Bare Coulomb Term:Off
+                       Dirac Coulomb Term:Off
+                  Dirac Coulomb SSSS Term:Off
+                               Gaunt Term:Off
+                               Gauge Term:Off
+
+================================================================================
+
+
+ERI Cholesky Decomposition:
+================================================================================
+
+Parameters and options:
+  ----------------------------------------------------------------------------  
+  Algorithm:            Dynamic-ERI
+  Threshold:            1.0000e-04
+  ERI library:          Libint2
+  General contraction:  True
+  Build 4-index ERI:    False
+  Sigma:                1.0000e-02
+  Max qualification:    1000
+
+Dynamic-ERI Pivots Determination:
+  ----------------------------------------------------------------------------  
+  Cholesky-RI-Diagonal duration   = 5.5215e-02 s 
+    D size = 11775
+    lenQ: 113
+    ERI size = 278
+    LevalEnd = 113
+    RevalEnd = 278
+    SevalBegin = 278
+    Current ERI count    = 81345
+    Current ERI duration = 1.5917e+00 s 
+    Current ERIvec = 1.0151e-01 s 
+    Current ERIcopy = 1.2659e-03 s 
+    Current CDalgMM = 2.6255e-05 s 
+    Selected: (0,0)	Diag: 1.5484e+02
+    Selected: (1,1)	Diag: 2.0196e+01
+    Selected: (264,264)	Diag: 1.0245e+01
+    Selected: (171,171)	Diag: 1.0244e+01
+    Selected: (233,233)	Diag: 1.0239e+01
+    Selected: (140,140)	Diag: 1.0237e+01
+    Selected: (202,202)	Diag: 1.0232e+01
+    Selected: (109,109)	Diag: 1.0231e+01
+    Selected: (11,11)	Diag: 6.9394e+00
+    Selected: (2,10)	Diag: 3.8734e+00
+    Selected: (2,12)	Diag: 3.8734e+00
+    Selected: (2,11)	Diag: 3.8734e+00
+    Selected: (15,15)	Diag: 3.6274e+00
+    Selected: (10,10)	Diag: 3.1537e+00
+    Selected: (12,12)	Diag: 2.4971e+00
+    Selected: (38,38)	Diag: 1.5606e+00
+    InnerLoop CDalgMV  = 9.6645e-04 s 
+    InnerLoop duration = 2.2570e-03 s 
+    pivot Size = 16
+    D size = 11658
+    lenQ: 1000
+    ERI size = 2757
+    LevalEnd = 144
+    RevalEnd = 1113
+    SevalBegin = 2752
+    Current Shrink = 1.0152e-02 s 
+    Current ERItrans = 6.2155e-03 s 
+    Current ERI count    = 271005
+    Current ERI duration = 3.0538e+00 s 
+    Current ERIvec = 1.5877e-01 s 
+    Current ERIcopy = 5.9146e-03 s 
+    Current CDalgMM = 1.9155e-03 s 
+    Selected: (265,265)	Diag: 1.2134e+00
+    Selected: (172,172)	Diag: 1.2130e+00
+    Selected: (110,110)	Diag: 1.2114e+00
+    Selected: (203,203)	Diag: 1.2110e+00
+    Selected: (141,141)	Diag: 1.2096e+00
+    Selected: (234,234)	Diag: 1.2093e+00
+    Selected: (15,30)	Diag: 1.2019e+00
+    Selected: (32,32)	Diag: 1.0325e+00
+    Selected: (3,13)	Diag: 1.0275e+00
+    Selected: (3,14)	Diag: 1.0275e+00
+    Selected: (10,11)	Diag: 1.0155e+00
+    Selected: (10,12)	Diag: 1.0155e+00
+    Selected: (11,12)	Diag: 1.0155e+00
+    Selected: (72,72)	Diag: 8.6850e-01
+    Selected: (1,12)	Diag: 7.7728e-01
+    Selected: (1,11)	Diag: 7.4354e-01
+    Selected: (1,10)	Diag: 7.4354e-01
+    Selected: (124,124)	Diag: 7.2176e-01
+    Selected: (217,217)	Diag: 7.2091e-01
+    Selected: (157,157)	Diag: 7.1592e-01
+    Selected: (250,250)	Diag: 7.1542e-01
+    Selected: (278,278)	Diag: 7.1152e-01
+    Selected: (185,185)	Diag: 7.1122e-01
+    Selected: (13,31)	Diag: 6.3551e-01
+    Selected: (28,28)	Diag: 5.6975e-01
+    Selected: (3,29)	Diag: 5.4063e-01
+    Selected: (3,28)	Diag: 5.4063e-01
+    Selected: (3,31)	Diag: 5.4063e-01
+    Selected: (3,32)	Diag: 5.4044e-01
+    Selected: (14,29)	Diag: 5.0483e-01
+    Selected: (41,41)	Diag: 4.7166e-01
+    Selected: (18,35)	Diag: 4.2676e-01
+    Selected: (39,39)	Diag: 4.1137e-01
+    Selected: (0,1)	Diag: 4.0511e-01
+    Selected: (91,91)	Diag: 3.7913e-01
+    Selected: (4,16)	Diag: 3.4723e-01
+    Selected: (4,17)	Diag: 3.4723e-01
+    Selected: (40,40)	Diag: 3.4548e-01
+    Selected: (235,238)	Diag: 3.3008e-01
+    Selected: (173,177)	Diag: 3.3008e-01
+    Selected: (142,145)	Diag: 3.3008e-01
+    Selected: (266,270)	Diag: 3.3008e-01
+    Selected: (204,209)	Diag: 3.3008e-01
+    Selected: (111,116)	Diag: 3.3008e-01
+    Selected: (204,208)	Diag: 3.3007e-01
+    Selected: (173,176)	Diag: 3.3007e-01
+    Selected: (111,115)	Diag: 3.3007e-01
+    Selected: (266,269)	Diag: 3.3007e-01
+    Selected: (235,240)	Diag: 3.3007e-01
+    Selected: (142,147)	Diag: 3.3007e-01
+    Selected: (37,37)	Diag: 3.2989e-01
+    Selected: (266,271)	Diag: 3.2964e-01
+    Selected: (173,178)	Diag: 3.2964e-01
+    Selected: (204,207)	Diag: 3.2953e-01
+    Selected: (111,114)	Diag: 3.2953e-01
+    Selected: (142,146)	Diag: 3.2953e-01
+    Selected: (235,239)	Diag: 3.2953e-01
+    Selected: (271,271)	Diag: 2.9832e-01
+    Selected: (178,178)	Diag: 2.9832e-01
+    Selected: (114,114)	Diag: 2.9819e-01
+    Selected: (207,207)	Diag: 2.9819e-01
+    Selected: (239,239)	Diag: 2.9818e-01
+    Selected: (146,146)	Diag: 2.9818e-01
+    Selected: (15,29)	Diag: 2.7793e-01
+    Selected: (14,28)	Diag: 2.7793e-01
+    Selected: (13,28)	Diag: 2.6061e-01
+    Selected: (15,31)	Diag: 2.6061e-01
+    Selected: (18,67)	Diag: 2.5826e-01
+    Selected: (18,65)	Diag: 2.5826e-01
+    Selected: (17,69)	Diag: 2.4460e-01
+    Selected: (74,74)	Diag: 2.4092e-01
+    Selected: (16,41)	Diag: 2.3220e-01
+    Selected: (223,223)	Diag: 2.3029e-01
+    Selected: (130,130)	Diag: 2.3017e-01
+    Selected: (254,254)	Diag: 2.2823e-01
+    Selected: (161,161)	Diag: 2.2818e-01
+    Selected: (287,287)	Diag: 2.2403e-01
+    Selected: (194,194)	Diag: 2.2403e-01
+    Selected: (16,63)	Diag: 2.1468e-01
+    Selected: (80,95)	Diag: 2.0180e-01
+    Selected: (31,31)	Diag: 1.9941e-01
+    Selected: (29,29)	Diag: 1.9895e-01
+    Selected: (42,42)	Diag: 1.9118e-01
+    Selected: (103,103)	Diag: 1.8491e-01
+    Selected: (17,39)	Diag: 1.8284e-01
+    Selected: (19,43)	Diag: 1.7862e-01
+    Selected: (20,43)	Diag: 1.7862e-01
+    Selected: (4,64)	Diag: 1.7780e-01
+    Selected: (28,32)	Diag: 1.7633e-01
+    Selected: (29,30)	Diag: 1.6414e-01
+    Selected: (30,31)	Diag: 1.6414e-01
+    Selected: (133,133)	Diag: 1.5522e-01
+    Selected: (226,226)	Diag: 1.5522e-01
+    Selected: (263,263)	Diag: 1.5507e-01
+    Selected: (170,170)	Diag: 1.5507e-01
+    Selected: (20,47)	Diag: 1.5313e-01
+    Selected: (19,47)	Diag: 1.5313e-01
+    Selected: (40,42)	Diag: 1.4320e-01
+    Selected: (96,96)	Diag: 1.3402e-01
+    Selected: (4,65)	Diag: 1.3189e-01
+    Selected: (4,67)	Diag: 1.3189e-01
+    Selected: (20,44)	Diag: 1.3109e-01
+    InnerLoop CDalgMV  = 6.4032e-03 s 
+    InnerLoop duration = 1.4462e-02 s 
+    pivot Size = 118
+    D size = 10565
+    lenQ: 1000
+    ERI size = 3433
+    LevalEnd = 737
+    RevalEnd = 2140
+    SevalBegin = 2658
+    Current Shrink = 1.8319e-02 s 
+    Current ERItrans = 1.8298e-03 s 
+    Current ERI count    = 54093
+    Current ERI duration = 4.5551e-01 s 
+    Current ERIvec = 2.3871e-02 s 
+    Current ERIcopy = 5.1838e-03 s 
+    Current CDalgMM = 6.0872e-03 s 
+    Selected: (218,218)	Diag: 1.2980e-01
+    Selected: (125,125)	Diag: 1.2980e-01
+    Selected: (249,249)	Diag: 1.2974e-01
+    Selected: (156,156)	Diag: 1.2974e-01
+    Selected: (15,28)	Diag: 1.2944e-01
+    Selected: (292,292)	Diag: 1.2933e-01
+    Selected: (199,199)	Diag: 1.2933e-01
+    Selected: (189,189)	Diag: 1.2878e-01
+    Selected: (282,282)	Diag: 1.2878e-01
+    Selected: (33,33)	Diag: 1.2814e-01
+    Selected: (142,157)	Diag: 1.2794e-01
+    Selected: (235,250)	Diag: 1.2794e-01
+    Selected: (111,124)	Diag: 1.2794e-01
+    Selected: (204,217)	Diag: 1.2794e-01
+    Selected: (266,278)	Diag: 1.2794e-01
+    Selected: (173,185)	Diag: 1.2794e-01
+    Selected: (204,216)	Diag: 1.2794e-01
+    Selected: (111,123)	Diag: 1.2794e-01
+    Selected: (142,154)	Diag: 1.2794e-01
+    Selected: (235,247)	Diag: 1.2794e-01
+    Selected: (266,279)	Diag: 1.2794e-01
+    Selected: (173,188)	Diag: 1.2794e-01
+    Selected: (173,186)	Diag: 1.2794e-01
+    Selected: (266,281)	Diag: 1.2794e-01
+    Selected: (204,219)	Diag: 1.2794e-01
+    Selected: (111,126)	Diag: 1.2794e-01
+    Selected: (142,155)	Diag: 1.2794e-01
+    Selected: (235,248)	Diag: 1.2794e-01
+    Selected: (41,42)	Diag: 1.2464e-01
+    Selected: (39,42)	Diag: 1.2464e-01
+    Selected: (38,39)	Diag: 1.2464e-01
+    Selected: (38,41)	Diag: 1.2464e-01
+    Selected: (150,161)	Diag: 1.2113e-01
+    Selected: (243,254)	Diag: 1.2113e-01
+    Selected: (212,223)	Diag: 1.2111e-01
+    Selected: (119,130)	Diag: 1.2111e-01
+    Selected: (290,290)	Diag: 1.1832e-01
+    Selected: (197,197)	Diag: 1.1832e-01
+    Selected: (181,192)	Diag: 1.1473e-01
+    Selected: (274,285)	Diag: 1.1463e-01
+    Selected: (21,74)	Diag: 1.1344e-01
+    Selected: (21,72)	Diag: 1.1344e-01
+    Selected: (4,63)	Diag: 1.1331e-01
+    Selected: (4,69)	Diag: 1.1331e-01
+    Selected: (29,31)	Diag: 1.1310e-01
+    Selected: (19,70)	Diag: 1.0792e-01
+    Selected: (46,74)	Diag: 1.0699e-01
+    Selected: (115,115)	Diag: 1.0695e-01
+    Selected: (208,208)	Diag: 1.0695e-01
+    Selected: (145,145)	Diag: 1.0694e-01
+    Selected: (238,238)	Diag: 1.0694e-01
+    Selected: (0,12)	Diag: 1.0608e-01
+    Selected: (0,11)	Diag: 1.0607e-01
+    Selected: (0,10)	Diag: 1.0607e-01
+    Selected: (214,214)	Diag: 1.0457e-01
+    Selected: (121,121)	Diag: 1.0457e-01
+    Selected: (73,73)	Diag: 1.0367e-01
+    Selected: (70,70)	Diag: 1.0067e-01
+    Selected: (108,108)	Diag: 9.8271e-02
+    Selected: (40,66)	Diag: 9.8019e-02
+    Selected: (151,151)	Diag: 9.5890e-02
+    Selected: (272,283)	Diag: 9.5485e-02
+    Selected: (179,190)	Diag: 9.5485e-02
+    Selected: (273,283)	Diag: 9.5383e-02
+    Selected: (180,190)	Diag: 9.5383e-02
+    Selected: (119,129)	Diag: 9.5285e-02
+    Selected: (212,222)	Diag: 9.5283e-02
+    Selected: (243,255)	Diag: 9.4830e-02
+    Selected: (150,162)	Diag: 9.4824e-02
+    Selected: (244,244)	Diag: 9.4269e-02
+    Selected: (71,71)	Diag: 9.3908e-02
+    Selected: (212,224)	Diag: 9.3308e-02
+    Selected: (119,131)	Diag: 9.3288e-02
+    Selected: (243,253)	Diag: 9.3028e-02
+    Selected: (20,76)	Diag: 9.3012e-02
+    Selected: (150,160)	Diag: 9.2998e-02
+    Selected: (76,76)	Diag: 8.6975e-02
+    Selected: (266,282)	Diag: 8.4731e-02
+    Selected: (173,189)	Diag: 8.4731e-02
+    Selected: (126,126)	Diag: 8.4332e-02
+    Selected: (219,219)	Diag: 8.4332e-02
+    Selected: (248,248)	Diag: 8.4331e-02
+    Selected: (155,155)	Diag: 8.4331e-02
+    Selected: (12,30)	Diag: 8.3749e-02
+    Selected: (39,41)	Diag: 8.3689e-02
+    Selected: (94,94)	Diag: 8.2662e-02
+    Selected: (184,184)	Diag: 8.1839e-02
+    Selected: (24,56)	Diag: 8.0849e-02
+    Selected: (24,54)	Diag: 8.0849e-02
+    Selected: (277,277)	Diag: 8.0780e-02
+    Selected: (28,31)	Diag: 8.0682e-02
+    Selected: (28,29)	Diag: 8.0682e-02
+    Selected: (180,194)	Diag: 8.0661e-02
+    Selected: (272,287)	Diag: 8.0661e-02
+    Selected: (273,287)	Diag: 8.0661e-02
+    Selected: (179,194)	Diag: 8.0661e-02
+    Selected: (75,75)	Diag: 7.9142e-02
+    Selected: (38,69)	Diag: 7.5601e-02
+    Selected: (38,63)	Diag: 7.5601e-02
+    Selected: (45,73)	Diag: 7.5371e-02
+    Selected: (11,32)	Diag: 7.2402e-02
+    Selected: (10,32)	Diag: 7.2402e-02
+    Selected: (12,29)	Diag: 7.1211e-02
+    Selected: (12,31)	Diag: 7.1211e-02
+    Selected: (118,129)	Diag: 7.0972e-02
+    Selected: (211,222)	Diag: 7.0972e-02
+    Selected: (241,255)	Diag: 7.0968e-02
+    Selected: (148,162)	Diag: 7.0968e-02
+    Selected: (272,286)	Diag: 7.0680e-02
+    Selected: (179,193)	Diag: 7.0679e-02
+    Selected: (21,44)	Diag: 6.9182e-02
+    Selected: (21,46)	Diag: 6.9182e-02
+    Selected: (224,224)	Diag: 6.8947e-02
+    Selected: (131,131)	Diag: 6.8947e-02
+    Selected: (253,253)	Diag: 6.8871e-02
+    Selected: (160,160)	Diag: 6.8870e-02
+    Selected: (36,36)	Diag: 6.8128e-02
+    Selected: (34,34)	Diag: 6.7281e-02
+    Selected: (41,67)	Diag: 6.7056e-02
+    Selected: (5,71)	Diag: 6.6294e-02
+    Selected: (19,71)	Diag: 6.5703e-02
+    Selected: (20,71)	Diag: 6.5703e-02
+    Selected: (39,65)	Diag: 6.5508e-02
+    Selected: (19,75)	Diag: 6.5020e-02
+    Selected: (20,75)	Diag: 6.5020e-02
+    Selected: (164,164)	Diag: 6.3830e-02
+    Selected: (257,257)	Diag: 6.3830e-02
+    Selected: (139,139)	Diag: 6.3829e-02
+    Selected: (232,232)	Diag: 6.3829e-02
+    Selected: (40,65)	Diag: 6.3392e-02
+    Selected: (40,67)	Diag: 6.3392e-02
+    Selected: (118,132)	Diag: 6.1558e-02
+    Selected: (211,225)	Diag: 6.1558e-02
+    Selected: (241,256)	Diag: 6.1549e-02
+    Selected: (148,163)	Diag: 6.1548e-02
+    Selected: (22,56)	Diag: 6.1460e-02
+    Selected: (48,99)	Diag: 6.1449e-02
+    Selected: (210,221)	Diag: 6.1228e-02
+    Selected: (117,128)	Diag: 6.1228e-02
+    Selected: (149,159)	Diag: 6.1217e-02
+    Selected: (242,252)	Diag: 6.1217e-02
+    Selected: (211,221)	Diag: 6.1120e-02
+    Selected: (118,128)	Diag: 6.1118e-02
+    Selected: (241,252)	Diag: 6.1108e-02
+    Selected: (148,159)	Diag: 6.1107e-02
+    Selected: (56,56)	Diag: 6.0951e-02
+    Selected: (146,155)	Diag: 6.0030e-02
+    Selected: (239,248)	Diag: 6.0030e-02
+    Selected: (114,126)	Diag: 6.0026e-02
+    Selected: (207,219)	Diag: 6.0026e-02
+    Selected: (177,186)	Diag: 6.0021e-02
+    Selected: (270,279)	Diag: 6.0021e-02
+    Selected: (190,190)	Diag: 6.0017e-02
+    Selected: (283,283)	Diag: 6.0017e-02
+    Selected: (271,281)	Diag: 5.9818e-02
+    Selected: (271,279)	Diag: 5.9818e-02
+    Selected: (178,186)	Diag: 5.9818e-02
+    Selected: (178,188)	Diag: 5.9818e-02
+    Selected: (117,132)	Diag: 5.9503e-02
+    Selected: (210,225)	Diag: 5.9487e-02
+    Selected: (149,163)	Diag: 5.9405e-02
+    Selected: (242,256)	Diag: 5.9385e-02
+    Selected: (50,94)	Diag: 5.8276e-02
+    Selected: (50,96)	Diag: 5.8276e-02
+    Selected: (198,198)	Diag: 5.7986e-02
+    Selected: (291,291)	Diag: 5.7986e-02
+    Selected: (45,47)	Diag: 5.7027e-02
+    Selected: (10,31)	Diag: 5.6721e-02
+    Selected: (220,220)	Diag: 5.6394e-02
+    Selected: (127,127)	Diag: 5.6394e-02
+    Selected: (251,251)	Diag: 5.6394e-02
+    Selected: (158,158)	Diag: 5.6394e-02
+    Selected: (79,94)	Diag: 5.2635e-02
+    Selected: (222,222)	Diag: 5.2487e-02
+    Selected: (129,129)	Diag: 5.2483e-02
+    Selected: (162,162)	Diag: 5.2461e-02
+    Selected: (255,255)	Diag: 5.2457e-02
+    Selected: (52,91)	Diag: 5.2385e-02
+    Selected: (52,77)	Diag: 5.1917e-02
+    Selected: (52,83)	Diag: 5.1917e-02
+    Selected: (66,66)	Diag: 5.1808e-02
+    Selected: (188,188)	Diag: 5.1618e-02
+    Selected: (281,281)	Diag: 5.1618e-02
+    InnerLoop CDalgMV  = 1.2337e-02 s 
+    InnerLoop duration = 2.6073e-02 s 
+    pivot Size = 301
+    D size = 9309
+    lenQ: 1000
+    ERI size = 3584
+    LevalEnd = 941
+    RevalEnd = 2213
+    SevalBegin = 2507
+    Current Shrink = 1.7980e-02 s 
+    Current ERItrans = 1.0601e-03 s 
+    Current ERI count    = 21634
+    Current ERI duration = 1.6807e-01 s 
+    Current ERIvec = 9.3395e-03 s 
+    Current ERIcopy = 3.0399e-03 s 
+    Current CDalgMM = 9.7501e-03 s 
+    Selected: (48,83)	Diag: 5.1210e-02
+    Selected: (48,77)	Diag: 5.1210e-02
+    Selected: (63,69)	Diag: 5.0597e-02
+    Selected: (243,261)	Diag: 5.0147e-02
+    Selected: (150,168)	Diag: 5.0147e-02
+    Selected: (119,135)	Diag: 5.0147e-02
+    Selected: (212,228)	Diag: 5.0147e-02
+    Selected: (150,166)	Diag: 5.0102e-02
+    Selected: (243,259)	Diag: 5.0102e-02
+    Selected: (119,137)	Diag: 5.0074e-02
+    Selected: (212,230)	Diag: 5.0074e-02
+    Selected: (274,290)	Diag: 4.9962e-02
+    Selected: (181,199)	Diag: 4.9962e-02
+    Selected: (181,197)	Diag: 4.9961e-02
+    Selected: (274,292)	Diag: 4.9961e-02
+    Selected: (279,279)	Diag: 4.9385e-02
+    Selected: (186,186)	Diag: 4.9385e-02
+    Selected: (236,258)	Diag: 4.9215e-02
+    Selected: (143,165)	Diag: 4.9215e-02
+    Selected: (112,134)	Diag: 4.9215e-02
+    Selected: (205,227)	Diag: 4.9215e-02
+    Selected: (267,289)	Diag: 4.9215e-02
+    Selected: (174,196)	Diag: 4.9215e-02
+    Selected: (99,99)	Diag: 4.8920e-02
+    Selected: (19,46)	Diag: 4.8895e-02
+    Selected: (11,29)	Diag: 4.7891e-02
+    Selected: (179,195)	Diag: 4.7646e-02
+    Selected: (272,288)	Diag: 4.7646e-02
+    Selected: (148,164)	Diag: 4.7591e-02
+    Selected: (241,257)	Diag: 4.7591e-02
+    Selected: (118,139)	Diag: 4.7591e-02
+    Selected: (211,232)	Diag: 4.7591e-02
+    Selected: (180,201)	Diag: 4.6588e-02
+    Selected: (273,294)	Diag: 4.6588e-02
+    Selected: (183,183)	Diag: 4.6538e-02
+    Selected: (149,170)	Diag: 4.6535e-02
+    Selected: (242,263)	Diag: 4.6535e-02
+    Selected: (210,226)	Diag: 4.6535e-02
+    Selected: (117,133)	Diag: 4.6535e-02
+    Selected: (276,276)	Diag: 4.6532e-02
+    Selected: (110,115)	Diag: 4.6357e-02
+    Selected: (203,208)	Diag: 4.6357e-02
+    Selected: (234,238)	Diag: 4.6357e-02
+    Selected: (141,145)	Diag: 4.6357e-02
+    Selected: (182,182)	Diag: 4.6234e-02
+    Selected: (275,275)	Diag: 4.6220e-02
+    Selected: (63,63)	Diag: 4.6205e-02
+    Selected: (203,207)	Diag: 4.6204e-02
+    Selected: (110,114)	Diag: 4.6204e-02
+    Selected: (141,146)	Diag: 4.6199e-02
+    Selected: (234,239)	Diag: 4.6199e-02
+    Selected: (240,249)	Diag: 4.6004e-02
+    Selected: (147,156)	Diag: 4.6004e-02
+    Selected: (209,218)	Diag: 4.6004e-02
+    Selected: (116,125)	Diag: 4.6004e-02
+    Selected: (176,188)	Diag: 4.5728e-02
+    Selected: (269,281)	Diag: 4.5728e-02
+    Selected: (269,278)	Diag: 4.5440e-02
+    Selected: (270,278)	Diag: 4.5440e-02
+    Selected: (176,185)	Diag: 4.5440e-02
+    Selected: (177,185)	Diag: 4.5440e-02
+    Selected: (21,71)	Diag: 4.5228e-02
+    Selected: (95,95)	Diag: 4.5016e-02
+    Selected: (41,64)	Diag: 4.4926e-02
+    Selected: (39,64)	Diag: 4.4926e-02
+    Selected: (33,64)	Diag: 4.4628e-02
+    Selected: (82,82)	Diag: 4.4364e-02
+    Selected: (78,78)	Diag: 4.3330e-02
+    Selected: (44,72)	Diag: 4.3291e-02
+    Selected: (247,247)	Diag: 4.2951e-02
+    Selected: (154,154)	Diag: 4.2951e-02
+    Selected: (216,216)	Diag: 4.2951e-02
+    Selected: (123,123)	Diag: 4.2951e-02
+    Selected: (149,160)	Diag: 4.2476e-02
+    Selected: (242,253)	Diag: 4.2476e-02
+    Selected: (117,131)	Diag: 4.2222e-02
+    Selected: (210,224)	Diag: 4.2219e-02
+    Selected: (180,191)	Diag: 4.2144e-02
+    Selected: (273,284)	Diag: 4.2144e-02
+    Selected: (42,64)	Diag: 4.1697e-02
+    Selected: (40,64)	Diag: 4.1697e-02
+    Selected: (30,30)	Diag: 4.1437e-02
+    Selected: (147,157)	Diag: 3.9626e-02
+    Selected: (240,250)	Diag: 3.9626e-02
+    Selected: (116,124)	Diag: 3.9626e-02
+    Selected: (209,217)	Diag: 3.9626e-02
+    Selected: (238,247)	Diag: 3.9604e-02
+    Selected: (145,154)	Diag: 3.9604e-02
+    Selected: (208,216)	Diag: 3.9604e-02
+    Selected: (115,123)	Diag: 3.9604e-02
+    Selected: (37,68)	Diag: 3.9540e-02
+    Selected: (11,31)	Diag: 3.9361e-02
+    Selected: (67,67)	Diag: 3.8619e-02
+    Selected: (66,67)	Diag: 3.8530e-02
+    Selected: (65,66)	Diag: 3.8530e-02
+    Selected: (187,198)	Diag: 3.8157e-02
+    Selected: (280,291)	Diag: 3.8152e-02
+    Selected: (245,245)	Diag: 3.8134e-02
+    Selected: (213,213)	Diag: 3.8031e-02
+    Selected: (152,152)	Diag: 3.7990e-02
+    Selected: (120,120)	Diag: 3.7873e-02
+    Selected: (238,250)	Diag: 3.7821e-02
+    Selected: (145,157)	Diag: 3.7821e-02
+    Selected: (208,217)	Diag: 3.7821e-02
+    Selected: (115,124)	Diag: 3.7821e-02
+    Selected: (115,127)	Diag: 3.7624e-02
+    Selected: (208,220)	Diag: 3.7624e-02
+    Selected: (145,158)	Diag: 3.7624e-02
+    Selected: (238,251)	Diag: 3.7624e-02
+    Selected: (240,248)	Diag: 3.7600e-02
+    Selected: (147,155)	Diag: 3.7600e-02
+    Selected: (209,219)	Diag: 3.7600e-02
+    Selected: (116,126)	Diag: 3.7600e-02
+    Selected: (65,65)	Diag: 3.7118e-02
+    Selected: (81,96)	Diag: 3.7063e-02
+    Selected: (10,28)	Diag: 3.6979e-02
+    Selected: (11,28)	Diag: 3.6979e-02
+    Selected: (86,103)	Diag: 3.6203e-02
+    Selected: (24,86)	Diag: 3.5707e-02
+    Selected: (24,88)	Diag: 3.5707e-02
+    Selected: (53,108)	Diag: 3.5271e-02
+    Selected: (35,37)	Diag: 3.5023e-02
+    Selected: (274,286)	Diag: 3.4808e-02
+    Selected: (274,284)	Diag: 3.4808e-02
+    Selected: (181,193)	Diag: 3.4804e-02
+    Selected: (181,191)	Diag: 3.4804e-02
+    Selected: (153,153)	Diag: 3.4747e-02
+    Selected: (215,215)	Diag: 3.4740e-02
+    Selected: (246,246)	Diag: 3.4552e-02
+    Selected: (122,122)	Diag: 3.4543e-02
+    Selected: (293,293)	Diag: 3.4257e-02
+    Selected: (200,200)	Diag: 3.4257e-02
+    Selected: (265,269)	Diag: 3.3484e-02
+    Selected: (265,270)	Diag: 3.3484e-02
+    Selected: (172,177)	Diag: 3.3484e-02
+    Selected: (172,176)	Diag: 3.3484e-02
+    Selected: (2,28)	Diag: 3.2495e-02
+    Selected: (294,294)	Diag: 3.2336e-02
+    Selected: (201,201)	Diag: 3.2335e-02
+    Selected: (68,69)	Diag: 3.1751e-02
+    Selected: (63,68)	Diag: 3.1751e-02
+    Selected: (23,53)	Diag: 3.1686e-02
+    Selected: (22,53)	Diag: 3.1686e-02
+    Selected: (82,97)	Diag: 3.1661e-02
+    Selected: (289,289)	Diag: 3.1320e-02
+    Selected: (196,196)	Diag: 3.1320e-02
+    Selected: (259,259)	Diag: 3.1216e-02
+    Selected: (166,166)	Diag: 3.1216e-02
+    Selected: (230,230)	Diag: 3.1215e-02
+    Selected: (137,137)	Diag: 3.1215e-02
+    Selected: (195,195)	Diag: 3.1007e-02
+    Selected: (288,288)	Diag: 3.1007e-02
+    Selected: (24,102)	Diag: 3.1002e-02
+    Selected: (49,97)	Diag: 3.0851e-02
+    Selected: (51,97)	Diag: 3.0851e-02
+    Selected: (49,93)	Diag: 3.0750e-02
+    Selected: (51,93)	Diag: 3.0750e-02
+    Selected: (2,29)	Diag: 3.0577e-02
+    Selected: (2,31)	Diag: 3.0577e-02
+    Selected: (53,100)	Diag: 3.0540e-02
+    Selected: (168,168)	Diag: 3.0371e-02
+    Selected: (261,261)	Diag: 3.0371e-02
+    Selected: (135,135)	Diag: 3.0367e-02
+    Selected: (228,228)	Diag: 3.0367e-02
+    Selected: (49,98)	Diag: 3.0295e-02
+    Selected: (211,231)	Diag: 3.0288e-02
+    Selected: (118,138)	Diag: 3.0288e-02
+    Selected: (241,262)	Diag: 3.0288e-02
+    Selected: (148,169)	Diag: 3.0288e-02
+    Selected: (117,134)	Diag: 3.0284e-02
+    Selected: (210,227)	Diag: 3.0284e-02
+    Selected: (242,258)	Diag: 3.0284e-02
+    Selected: (149,165)	Diag: 3.0284e-02
+    Selected: (148,165)	Diag: 3.0267e-02
+    Selected: (241,258)	Diag: 3.0267e-02
+    Selected: (273,289)	Diag: 3.0262e-02
+    Selected: (180,196)	Diag: 3.0262e-02
+    Selected: (272,289)	Diag: 3.0262e-02
+    Selected: (179,196)	Diag: 3.0262e-02
+    Selected: (211,227)	Diag: 3.0259e-02
+    Selected: (118,134)	Diag: 3.0259e-02
+    Selected: (273,293)	Diag: 3.0256e-02
+    Selected: (272,293)	Diag: 3.0256e-02
+    Selected: (180,200)	Diag: 3.0256e-02
+    Selected: (179,200)	Diag: 3.0256e-02
+    Selected: (149,169)	Diag: 3.0237e-02
+    Selected: (242,262)	Diag: 3.0237e-02
+    Selected: (117,138)	Diag: 3.0207e-02
+    Selected: (210,231)	Diag: 3.0207e-02
+    Selected: (51,92)	Diag: 3.0099e-02
+    Selected: (78,93)	Diag: 2.9867e-02
+    Selected: (187,187)	Diag: 2.9446e-02
+    Selected: (280,280)	Diag: 2.9446e-02
+    Selected: (45,74)	Diag: 2.9427e-02
+    Selected: (45,72)	Diag: 2.9427e-02
+    Selected: (260,260)	Diag: 2.8907e-02
+    Selected: (167,167)	Diag: 2.8906e-02
+    Selected: (229,229)	Diag: 2.8900e-02
+    Selected: (136,136)	Diag: 2.8900e-02
+    Selected: (281,292)	Diag: 2.8658e-02
+    Selected: (188,199)	Diag: 2.8658e-02
+    Selected: (52,99)	Diag: 2.8650e-02
+    Selected: (2,32)	Diag: 2.8503e-02
+    Selected: (79,93)	Diag: 2.8405e-02
+    Selected: (81,93)	Diag: 2.8405e-02
+    Selected: (100,100)	Diag: 2.7763e-02
+    Selected: (64,68)	Diag: 2.7621e-02
+    Selected: (73,75)	Diag: 2.7138e-02
+    Selected: (64,64)	Diag: 2.6815e-02
+    Selected: (33,76)	Diag: 2.6728e-02
+    Selected: (33,70)	Diag: 2.6728e-02
+    Selected: (83,98)	Diag: 2.6707e-02
+    Selected: (52,98)	Diag: 2.6220e-02
+    Selected: (52,92)	Diag: 2.6220e-02
+    Selected: (65,67)	Diag: 2.6138e-02
+    Selected: (291,293)	Diag: 2.6050e-02
+    Selected: (198,200)	Diag: 2.6049e-02
+    Selected: (48,92)	Diag: 2.5988e-02
+    Selected: (48,98)	Diag: 2.5988e-02
+    Selected: (57,100)	Diag: 2.5593e-02
+    Selected: (149,164)	Diag: 2.5592e-02
+    Selected: (242,257)	Diag: 2.5592e-02
+    Selected: (210,232)	Diag: 2.5583e-02
+    Selected: (117,139)	Diag: 2.5583e-02
+    Selected: (217,219)	Diag: 2.5180e-02
+    Selected: (124,126)	Diag: 2.5180e-02
+    Selected: (248,250)	Diag: 2.5180e-02
+    Selected: (155,157)	Diag: 2.5180e-02
+    Selected: (186,188)	Diag: 2.5180e-02
+    Selected: (279,281)	Diag: 2.5180e-02
+    Selected: (241,263)	Diag: 2.5174e-02
+    Selected: (148,170)	Diag: 2.5174e-02
+    Selected: (118,133)	Diag: 2.5168e-02
+    Selected: (211,226)	Diag: 2.5167e-02
+    Selected: (59,59)	Diag: 2.5082e-02
+    Selected: (50,99)	Diag: 2.5030e-02
+    Selected: (104,104)	Diag: 2.4824e-02
+    Selected: (186,197)	Diag: 2.4741e-02
+    Selected: (279,290)	Diag: 2.4741e-02
+    Selected: (77,92)	Diag: 2.4561e-02
+    Selected: (48,80)	Diag: 2.4525e-02
+    Selected: (79,97)	Diag: 2.4143e-02
+    Selected: (81,97)	Diag: 2.4143e-02
+    Selected: (282,294)	Diag: 2.3834e-02
+    Selected: (189,195)	Diag: 2.3834e-02
+    Selected: (189,201)	Diag: 2.3834e-02
+    Selected: (282,288)	Diag: 2.3834e-02
+    Selected: (251,263)	Diag: 2.3815e-02
+    Selected: (158,170)	Diag: 2.3815e-02
+    Selected: (127,133)	Diag: 2.3815e-02
+    Selected: (220,226)	Diag: 2.3815e-02
+    Selected: (220,232)	Diag: 2.3582e-02
+    Selected: (127,139)	Diag: 2.3582e-02
+    Selected: (251,257)	Diag: 2.3540e-02
+    Selected: (158,164)	Diag: 2.3539e-02
+    Selected: (87,104)	Diag: 2.3498e-02
+    Selected: (185,189)	Diag: 2.3436e-02
+    Selected: (278,282)	Diag: 2.3436e-02
+    Selected: (216,220)	Diag: 2.3420e-02
+    Selected: (123,127)	Diag: 2.3420e-02
+    Selected: (247,251)	Diag: 2.3420e-02
+    Selected: (154,158)	Diag: 2.3420e-02
+    Selected: (70,76)	Diag: 2.2857e-02
+    InnerLoop CDalgMV  = 1.7452e-02 s 
+    InnerLoop duration = 3.6653e-02 s 
+    pivot Size = 564
+    D size = 7494
+    lenQ: 1000
+    ERI size = 3462
+    LevalEnd = 958
+    RevalEnd = 1869
+    SevalBegin = 2085
+    Current Shrink = 1.2717e-02 s 
+    Current ERItrans = 7.5479e-04 s 
+    Current ERI count    = 8392
+    Current ERI duration = 1.2087e-01 s 
+    Current ERIvec = 6.8524e-03 s 
+    Current ERIcopy = 3.4647e-03 s 
+    Current CDalgMM = 1.2907e-02 s 
+    Selected: (93,93)	Diag: 2.2468e-02
+    Selected: (80,96)	Diag: 2.1606e-02
+    Selected: (80,94)	Diag: 2.1606e-02
+    Selected: (84,100)	Diag: 2.1444e-02
+    Selected: (90,100)	Diag: 2.1444e-02
+    Selected: (65,68)	Diag: 2.1340e-02
+    Selected: (67,68)	Diag: 2.1340e-02
+    Selected: (36,71)	Diag: 2.1027e-02
+    Selected: (34,71)	Diag: 2.1027e-02
+    Selected: (48,91)	Diag: 2.0923e-02
+    Selected: (125,136)	Diag: 2.0769e-02
+    Selected: (218,229)	Diag: 2.0769e-02
+    Selected: (249,260)	Diag: 2.0769e-02
+    Selected: (156,167)	Diag: 2.0769e-02
+    Selected: (240,240)	Diag: 2.0676e-02
+    Selected: (147,147)	Diag: 2.0676e-02
+    Selected: (209,209)	Diag: 2.0676e-02
+    Selected: (116,116)	Diag: 2.0676e-02
+    Selected: (278,288)	Diag: 2.0406e-02
+    Selected: (278,294)	Diag: 2.0406e-02
+    Selected: (185,195)	Diag: 2.0405e-02
+    Selected: (185,201)	Diag: 2.0405e-02
+    Selected: (249,250)	Diag: 2.0371e-02
+    Selected: (156,157)	Diag: 2.0371e-02
+    Selected: (217,218)	Diag: 2.0371e-02
+    Selected: (124,125)	Diag: 2.0371e-02
+    Selected: (155,156)	Diag: 2.0368e-02
+    Selected: (248,249)	Diag: 2.0368e-02
+    Selected: (125,126)	Diag: 2.0368e-02
+    Selected: (218,219)	Diag: 2.0368e-02
+    Selected: (123,139)	Diag: 2.0354e-02
+    Selected: (216,232)	Diag: 2.0354e-02
+    Selected: (154,164)	Diag: 2.0354e-02
+    Selected: (247,257)	Diag: 2.0354e-02
+    Selected: (90,108)	Diag: 2.0353e-02
+    Selected: (84,108)	Diag: 2.0353e-02
+    Selected: (279,280)	Diag: 2.0343e-02
+    Selected: (187,188)	Diag: 2.0343e-02
+    Selected: (186,187)	Diag: 2.0343e-02
+    Selected: (280,281)	Diag: 2.0343e-02
+    Selected: (50,91)	Diag: 2.0306e-02
+    Selected: (80,91)	Diag: 2.0147e-02
+    Selected: (23,103)	Diag: 1.9983e-02
+    Selected: (57,108)	Diag: 1.9462e-02
+    Selected: (216,226)	Diag: 1.9386e-02
+    Selected: (123,133)	Diag: 1.9385e-02
+    Selected: (247,263)	Diag: 1.9314e-02
+    Selected: (154,170)	Diag: 1.9314e-02
+    Selected: (106,106)	Diag: 1.9214e-02
+    Selected: (195,201)	Diag: 1.9149e-02
+    Selected: (288,294)	Diag: 1.9149e-02
+    Selected: (80,83)	Diag: 1.9148e-02
+    Selected: (77,80)	Diag: 1.9148e-02
+    Selected: (133,139)	Diag: 1.9145e-02
+    Selected: (257,263)	Diag: 1.9145e-02
+    Selected: (226,232)	Diag: 1.9145e-02
+    Selected: (164,170)	Diag: 1.9145e-02
+    Selected: (21,93)	Diag: 1.9006e-02
+    Selected: (97,97)	Diag: 1.8875e-02
+    Selected: (2,30)	Diag: 1.8631e-02
+    Selected: (102,102)	Diag: 1.8336e-02
+    Selected: (77,95)	Diag: 1.8243e-02
+    Selected: (83,95)	Diag: 1.8243e-02
+    Selected: (73,74)	Diag: 1.7999e-02
+    Selected: (72,73)	Diag: 1.7999e-02
+    Selected: (85,102)	Diag: 1.7982e-02
+    Selected: (53,101)	Diag: 1.7934e-02
+    Selected: (53,107)	Diag: 1.7934e-02
+    Selected: (88,105)	Diag: 1.7895e-02
+    Selected: (80,99)	Diag: 1.7891e-02
+    Selected: (265,271)	Diag: 1.7737e-02
+    Selected: (172,178)	Diag: 1.7737e-02
+    Selected: (275,276)	Diag: 1.7606e-02
+    Selected: (182,183)	Diag: 1.7605e-02
+    Selected: (64,69)	Diag: 1.7558e-02
+    Selected: (63,64)	Diag: 1.7558e-02
+    Selected: (124,135)	Diag: 1.7458e-02
+    Selected: (217,228)	Diag: 1.7458e-02
+    Selected: (157,168)	Diag: 1.7458e-02
+    Selected: (250,261)	Diag: 1.7458e-02
+    Selected: (126,137)	Diag: 1.7408e-02
+    Selected: (219,230)	Diag: 1.7407e-02
+    Selected: (248,259)	Diag: 1.7404e-02
+    Selected: (155,166)	Diag: 1.7404e-02
+    Selected: (121,122)	Diag: 1.7194e-02
+    Selected: (214,215)	Diag: 1.7190e-02
+    Selected: (54,107)	Diag: 1.7106e-02
+    Selected: (56,101)	Diag: 1.7093e-02
+    Selected: (151,153)	Diag: 1.6994e-02
+    Selected: (38,40)	Diag: 1.6986e-02
+    Selected: (244,246)	Diag: 1.6981e-02
+    Selected: (82,95)	Diag: 1.6977e-02
+    Selected: (231,231)	Diag: 1.6356e-02
+    Selected: (138,138)	Diag: 1.6356e-02
+    Selected: (169,169)	Diag: 1.6345e-02
+    Selected: (262,262)	Diag: 1.6345e-02
+    Selected: (264,265)	Diag: 1.6295e-02
+    Selected: (171,172)	Diag: 1.6295e-02
+    Selected: (105,105)	Diag: 1.5948e-02
+    Selected: (129,131)	Diag: 1.5927e-02
+    Selected: (222,224)	Diag: 1.5927e-02
+    Selected: (253,255)	Diag: 1.5927e-02
+    Selected: (160,162)	Diag: 1.5927e-02
+    Selected: (78,98)	Diag: 1.5877e-02
+    Selected: (78,92)	Diag: 1.5877e-02
+    Selected: (50,93)	Diag: 1.5870e-02
+    Selected: (82,92)	Diag: 1.5633e-02
+    Selected: (82,98)	Diag: 1.5633e-02
+    Selected: (89,106)	Diag: 1.5627e-02
+    Selected: (58,58)	Diag: 1.5583e-02
+    Selected: (57,101)	Diag: 1.5500e-02
+    Selected: (57,107)	Diag: 1.5500e-02
+    Selected: (91,99)	Diag: 1.5450e-02
+    Selected: (83,99)	Diag: 1.5427e-02
+    Selected: (77,99)	Diag: 1.5427e-02
+    Selected: (156,168)	Diag: 1.5119e-02
+    Selected: (249,261)	Diag: 1.5119e-02
+    Selected: (218,228)	Diag: 1.5119e-02
+    Selected: (125,135)	Diag: 1.5119e-02
+    Selected: (280,292)	Diag: 1.5103e-02
+    Selected: (187,197)	Diag: 1.5103e-02
+    Selected: (187,199)	Diag: 1.5103e-02
+    Selected: (280,290)	Diag: 1.5103e-02
+    Selected: (218,230)	Diag: 1.5102e-02
+    Selected: (125,137)	Diag: 1.5102e-02
+    Selected: (249,259)	Diag: 1.5085e-02
+    Selected: (156,166)	Diag: 1.5085e-02
+    Selected: (134,134)	Diag: 1.4802e-02
+    Selected: (227,227)	Diag: 1.4802e-02
+    Selected: (165,165)	Diag: 1.4773e-02
+    Selected: (258,258)	Diag: 1.4773e-02
+    Selected: (197,198)	Diag: 1.4666e-02
+    Selected: (198,199)	Diag: 1.4666e-02
+    Selected: (290,291)	Diag: 1.4666e-02
+    Selected: (291,292)	Diag: 1.4666e-02
+    Selected: (229,230)	Diag: 1.4665e-02
+    Selected: (136,137)	Diag: 1.4665e-02
+    Selected: (259,260)	Diag: 1.4665e-02
+    Selected: (166,167)	Diag: 1.4665e-02
+    Selected: (167,168)	Diag: 1.4648e-02
+    Selected: (260,261)	Diag: 1.4648e-02
+    Selected: (135,136)	Diag: 1.4648e-02
+    Selected: (228,229)	Diag: 1.4648e-02
+    Selected: (213,215)	Diag: 1.4630e-02
+    Selected: (120,122)	Diag: 1.4628e-02
+    Selected: (192,194)	Diag: 1.4568e-02
+    Selected: (285,287)	Diag: 1.4566e-02
+    Selected: (245,246)	Diag: 1.4483e-02
+    Selected: (152,153)	Diag: 1.4477e-02
+    Selected: (197,199)	Diag: 1.4315e-02
+    Selected: (290,292)	Diag: 1.4315e-02
+    Selected: (32,63)	Diag: 1.4235e-02
+    Selected: (32,69)	Diag: 1.4235e-02
+    Selected: (43,75)	Diag: 1.4221e-02
+    Selected: (248,258)	Diag: 1.4110e-02
+    Selected: (219,227)	Diag: 1.4110e-02
+    Selected: (155,165)	Diag: 1.4110e-02
+    Selected: (126,134)	Diag: 1.4110e-02
+    Selected: (126,138)	Diag: 1.4088e-02
+    Selected: (219,231)	Diag: 1.4088e-02
+    Selected: (279,293)	Diag: 1.4082e-02
+    Selected: (188,200)	Diag: 1.4082e-02
+    Selected: (186,200)	Diag: 1.4082e-02
+    Selected: (281,293)	Diag: 1.4082e-02
+    Selected: (248,262)	Diag: 1.4057e-02
+    Selected: (155,169)	Diag: 1.4057e-02
+    Selected: (183,184)	Diag: 1.4040e-02
+    Selected: (182,184)	Diag: 1.4040e-02
+    Selected: (276,277)	Diag: 1.4029e-02
+    Selected: (275,277)	Diag: 1.4029e-02
+    Selected: (220,231)	Diag: 1.4009e-02
+    Selected: (127,138)	Diag: 1.4009e-02
+    Selected: (251,262)	Diag: 1.4005e-02
+    Selected: (158,169)	Diag: 1.4005e-02
+    Selected: (189,200)	Diag: 1.3721e-02
+    Selected: (282,293)	Diag: 1.3721e-02
+    Selected: (22,101)	Diag: 1.3668e-02
+    Selected: (23,107)	Diag: 1.3659e-02
+    Selected: (61,61)	Diag: 1.3316e-02
+    Selected: (7,107)	Diag: 1.2986e-02
+    Selected: (7,101)	Diag: 1.2986e-02
+    Selected: (244,245)	Diag: 1.2909e-02
+    Selected: (151,152)	Diag: 1.2907e-02
+    Selected: (71,75)	Diag: 1.2818e-02
+    Selected: (247,248)	Diag: 1.2799e-02
+    Selected: (154,155)	Diag: 1.2799e-02
+    Selected: (216,219)	Diag: 1.2799e-02
+    Selected: (123,126)	Diag: 1.2799e-02
+    Selected: (186,189)	Diag: 1.2799e-02
+    Selected: (279,282)	Diag: 1.2799e-02
+    Selected: (281,282)	Diag: 1.2799e-02
+    Selected: (188,189)	Diag: 1.2799e-02
+    Selected: (219,220)	Diag: 1.2795e-02
+    Selected: (126,127)	Diag: 1.2795e-02
+    Selected: (155,158)	Diag: 1.2794e-02
+    Selected: (248,251)	Diag: 1.2794e-02
+    Selected: (28,64)	Diag: 1.2663e-02
+    Selected: (80,92)	Diag: 1.2646e-02
+    Selected: (41,68)	Diag: 1.2574e-02
+    Selected: (85,107)	Diag: 1.2558e-02
+    Selected: (85,101)	Diag: 1.2557e-02
+    Selected: (213,214)	Diag: 1.2550e-02
+    Selected: (120,121)	Diag: 1.2549e-02
+    Selected: (35,65)	Diag: 1.2449e-02
+    Selected: (101,101)	Diag: 1.2397e-02
+    Selected: (80,98)	Diag: 1.2337e-02
+    Selected: (218,220)	Diag: 1.2063e-02
+    Selected: (125,127)	Diag: 1.2063e-02
+    Selected: (249,251)	Diag: 1.2062e-02
+    Selected: (156,158)	Diag: 1.2062e-02
+    Selected: (71,73)	Diag: 1.1663e-02
+    Selected: (216,227)	Diag: 1.1662e-02
+    Selected: (123,134)	Diag: 1.1662e-02
+    Selected: (247,258)	Diag: 1.1653e-02
+    Selected: (154,165)	Diag: 1.1653e-02
+    Selected: (107,107)	Diag: 1.1631e-02
+    Selected: (193,193)	Diag: 1.1602e-02
+    Selected: (286,286)	Diag: 1.1601e-02
+    Selected: (191,191)	Diag: 1.1513e-02
+    Selected: (284,284)	Diag: 1.1512e-02
+    Selected: (70,75)	Diag: 1.1502e-02
+    Selected: (75,76)	Diag: 1.1502e-02
+    Selected: (40,41)	Diag: 1.1453e-02
+    Selected: (39,40)	Diag: 1.1453e-02
+    Selected: (38,42)	Diag: 1.1350e-02
+    Selected: (34,36)	Diag: 1.1284e-02
+    Selected: (31,67)	Diag: 1.1203e-02
+    Selected: (29,65)	Diag: 1.1200e-02
+    Selected: (1,2)	Diag: 1.1109e-02
+    Selected: (278,289)	Diag: 1.1067e-02
+    Selected: (185,196)	Diag: 1.1067e-02
+    Selected: (43,71)	Diag: 1.0910e-02
+    Selected: (29,68)	Diag: 1.0764e-02
+    Selected: (177,188)	Diag: 1.0763e-02
+    Selected: (270,281)	Diag: 1.0763e-02
+    Selected: (238,248)	Diag: 1.0761e-02
+    Selected: (145,155)	Diag: 1.0761e-02
+    Selected: (208,219)	Diag: 1.0761e-02
+    Selected: (114,124)	Diag: 1.0761e-02
+    Selected: (166,168)	Diag: 1.0738e-02
+    Selected: (259,261)	Diag: 1.0738e-02
+    Selected: (135,137)	Diag: 1.0738e-02
+    Selected: (228,230)	Diag: 1.0738e-02
+    Selected: (196,200)	Diag: 1.0681e-02
+    Selected: (289,293)	Diag: 1.0681e-02
+    Selected: (227,231)	Diag: 1.0677e-02
+    Selected: (134,138)	Diag: 1.0677e-02
+    Selected: (258,262)	Diag: 1.0677e-02
+    Selected: (165,169)	Diag: 1.0677e-02
+    Selected: (177,177)	Diag: 1.0629e-02
+    Selected: (270,270)	Diag: 1.0629e-02
+    Selected: (94,95)	Diag: 1.0614e-02
+    Selected: (95,96)	Diag: 1.0614e-02
+    Selected: (284,286)	Diag: 1.0518e-02
+    Selected: (191,193)	Diag: 1.0518e-02
+    Selected: (109,110)	Diag: 1.0516e-02
+    Selected: (202,203)	Diag: 1.0516e-02
+    Selected: (140,141)	Diag: 1.0516e-02
+    Selected: (233,234)	Diag: 1.0516e-02
+    Selected: (37,70)	Diag: 1.0479e-02
+    Selected: (95,97)	Diag: 1.0476e-02
+    Selected: (89,107)	Diag: 1.0351e-02
+    Selected: (89,101)	Diag: 1.0298e-02
+    Selected: (157,169)	Diag: 1.0284e-02
+    Selected: (250,262)	Diag: 1.0284e-02
+    Selected: (217,231)	Diag: 1.0284e-02
+    Selected: (124,138)	Diag: 1.0284e-02
+    Selected: (55,100)	Diag: 1.0267e-02
+    Selected: (217,227)	Diag: 1.0199e-02
+    Selected: (124,134)	Diag: 1.0199e-02
+    Selected: (250,258)	Diag: 1.0195e-02
+    Selected: (157,165)	Diag: 1.0194e-02
+    Selected: (281,289)	Diag: 1.0178e-02
+    Selected: (279,289)	Diag: 1.0178e-02
+    Selected: (188,196)	Diag: 1.0178e-02
+    Selected: (186,196)	Diag: 1.0178e-02
+    Selected: (74,75)	Diag: 1.0033e-02
+    Selected: (72,75)	Diag: 1.0033e-02
+    Selected: (257,258)	Diag: 9.9555e-03
+    Selected: (164,165)	Diag: 9.9555e-03
+    Selected: (227,232)	Diag: 9.9555e-03
+    Selected: (134,139)	Diag: 9.9555e-03
+    Selected: (231,232)	Diag: 9.9509e-03
+    Selected: (138,139)	Diag: 9.9509e-03
+    Selected: (164,169)	Diag: 9.9508e-03
+    Selected: (257,262)	Diag: 9.9508e-03
+    Selected: (288,289)	Diag: 9.9470e-03
+    Selected: (195,196)	Diag: 9.9470e-03
+    Selected: (196,201)	Diag: 9.9470e-03
+    Selected: (289,294)	Diag: 9.9470e-03
+    Selected: (35,71)	Diag: 9.9445e-03
+    Selected: (82,93)	Diag: 9.8975e-03
+    Selected: (282,289)	Diag: 9.8615e-03
+    Selected: (189,196)	Diag: 9.8615e-03
+    Selected: (156,165)	Diag: 9.8614e-03
+    Selected: (249,258)	Diag: 9.8614e-03
+    Selected: (218,227)	Diag: 9.8614e-03
+    Selected: (125,134)	Diag: 9.8614e-03
+    Selected: (280,289)	Diag: 9.8613e-03
+    Selected: (187,196)	Diag: 9.8613e-03
+    Selected: (220,227)	Diag: 9.8612e-03
+    Selected: (127,134)	Diag: 9.8612e-03
+    Selected: (158,165)	Diag: 9.8612e-03
+    Selected: (251,258)	Diag: 9.8612e-03
+    Selected: (37,76)	Diag: 9.8461e-03
+    Selected: (70,72)	Diag: 9.7461e-03
+    Selected: (30,67)	Diag: 9.6493e-03
+    Selected: (77,98)	Diag: 9.5707e-03
+    Selected: (285,285)	Diag: 9.3753e-03
+    Selected: (80,93)	Diag: 9.3750e-03
+    Selected: (192,192)	Diag: 9.3740e-03
+    Selected: (202,209)	Diag: 8.9817e-03
+    Selected: (109,116)	Diag: 8.9817e-03
+    Selected: (233,240)	Diag: 8.9814e-03
+    Selected: (140,147)	Diag: 8.9814e-03
+    Selected: (269,269)	Diag: 8.9432e-03
+    Selected: (176,176)	Diag: 8.9432e-03
+    Selected: (84,104)	Diag: 8.8819e-03
+    Selected: (90,104)	Diag: 8.8810e-03
+    InnerLoop CDalgMV  = 1.4973e-02 s 
+    InnerLoop duration = 2.4053e-02 s 
+    pivot Size = 883
+    D size = 5384
+    lenQ: 1000
+    ERI size = 3066
+    LevalEnd = 930
+    RevalEnd = 1915
+    SevalBegin = 2071
+    Current Shrink = 1.1164e-02 s 
+    Current ERItrans = 4.9634e-04 s 
+    Current ERI count    = 9796
+    Current ERI duration = 6.0860e-02 s 
+    Current ERIvec = 4.7937e-03 s 
+    Current ERIcopy = 1.6505e-03 s 
+    Current CDalgMM = 1.1809e-02 s 
+    Selected: (80,82)	Diag: 8.6152e-03
+    Selected: (98,98)	Diag: 8.5688e-03
+    Selected: (37,66)	Diag: 8.4480e-03
+    Selected: (87,108)	Diag: 8.4022e-03
+    Selected: (36,37)	Diag: 8.3327e-03
+    Selected: (34,37)	Diag: 8.3327e-03
+    Selected: (168,169)	Diag: 8.3137e-03
+    Selected: (261,262)	Diag: 8.3137e-03
+    Selected: (228,231)	Diag: 8.3137e-03
+    Selected: (135,138)	Diag: 8.3137e-03
+    Selected: (196,197)	Diag: 8.3115e-03
+    Selected: (289,290)	Diag: 8.3115e-03
+    Selected: (196,199)	Diag: 8.3115e-03
+    Selected: (289,292)	Diag: 8.3115e-03
+    Selected: (227,228)	Diag: 8.3036e-03
+    Selected: (134,135)	Diag: 8.3036e-03
+    Selected: (165,168)	Diag: 8.3021e-03
+    Selected: (258,261)	Diag: 8.3021e-03
+    Selected: (89,104)	Diag: 8.2814e-03
+    Selected: (92,98)	Diag: 8.2586e-03
+    Selected: (104,108)	Diag: 8.2407e-03
+    Selected: (87,105)	Diag: 8.0544e-03
+    Selected: (87,103)	Diag: 8.0538e-03
+    Selected: (100,108)	Diag: 8.0402e-03
+    Selected: (91,98)	Diag: 7.7691e-03
+    Selected: (91,92)	Diag: 7.7691e-03
+    Selected: (13,38)	Diag: 7.6283e-03
+    Selected: (93,95)	Diag: 7.6207e-03
+    Selected: (221,221)	Diag: 7.6195e-03
+    Selected: (128,128)	Diag: 7.6187e-03
+    Selected: (159,159)	Diag: 7.6183e-03
+    Selected: (252,252)	Diag: 7.6175e-03
+    Selected: (14,38)	Diag: 7.6044e-03
+    Selected: (34,65)	Diag: 7.5607e-03
+    Selected: (86,88)	Diag: 7.4577e-03
+    Selected: (36,67)	Diag: 7.4315e-03
+    Selected: (103,104)	Diag: 7.3768e-03
+    Selected: (104,105)	Diag: 7.3768e-03
+    Selected: (86,102)	Diag: 7.3401e-03
+    Selected: (88,102)	Diag: 7.3380e-03
+    Selected: (105,107)	Diag: 6.9761e-03
+    Selected: (287,288)	Diag: 6.7220e-03
+    Selected: (287,294)	Diag: 6.7220e-03
+    Selected: (194,195)	Diag: 6.7220e-03
+    Selected: (194,201)	Diag: 6.7220e-03
+    Selected: (132,133)	Diag: 6.6992e-03
+    Selected: (225,226)	Diag: 6.6992e-03
+    Selected: (163,170)	Diag: 6.6989e-03
+    Selected: (256,263)	Diag: 6.6989e-03
+    Selected: (93,97)	Diag: 6.6846e-03
+    Selected: (101,103)	Diag: 6.6439e-03
+    Selected: (285,291)	Diag: 6.5426e-03
+    Selected: (192,198)	Diag: 6.5420e-03
+    Selected: (225,232)	Diag: 6.4674e-03
+    Selected: (163,164)	Diag: 6.4669e-03
+    Selected: (132,139)	Diag: 6.4664e-03
+    Selected: (256,257)	Diag: 6.4660e-03
+    Selected: (223,229)	Diag: 6.4601e-03
+    Selected: (254,260)	Diag: 6.4601e-03
+    Selected: (130,136)	Diag: 6.4601e-03
+    Selected: (161,167)	Diag: 6.4601e-03
+    Selected: (32,64)	Diag: 6.4570e-03
+    Selected: (31,68)	Diag: 6.3843e-03
+    Selected: (32,42)	Diag: 6.3637e-03
+    Selected: (28,38)	Diag: 6.3487e-03
+    Selected: (163,163)	Diag: 6.2453e-03
+    Selected: (256,256)	Diag: 6.2435e-03
+    Selected: (132,132)	Diag: 6.2400e-03
+    Selected: (225,225)	Diag: 6.2379e-03
+    Selected: (92,93)	Diag: 6.2343e-03
+    Selected: (93,98)	Diag: 6.2343e-03
+    Selected: (34,75)	Diag: 6.2303e-03
+    Selected: (52,80)	Diag: 6.0047e-03
+    Selected: (30,65)	Diag: 5.9784e-03
+    Selected: (30,64)	Diag: 5.9438e-03
+    Selected: (25,61)	Diag: 5.8648e-03
+    Selected: (102,105)	Diag: 5.7419e-03
+    Selected: (102,103)	Diag: 5.7419e-03
+    Selected: (187,201)	Diag: 5.7060e-03
+    Selected: (280,294)	Diag: 5.7060e-03
+    Selected: (280,288)	Diag: 5.7060e-03
+    Selected: (187,195)	Diag: 5.7060e-03
+    Selected: (156,170)	Diag: 5.6667e-03
+    Selected: (249,263)	Diag: 5.6667e-03
+    Selected: (218,226)	Diag: 5.6666e-03
+    Selected: (125,133)	Diag: 5.6666e-03
+    Selected: (249,257)	Diag: 5.6272e-03
+    Selected: (156,164)	Diag: 5.6272e-03
+    Selected: (218,232)	Diag: 5.6263e-03
+    Selected: (125,139)	Diag: 5.6262e-03
+    Selected: (161,168)	Diag: 5.5443e-03
+    Selected: (254,261)	Diag: 5.5443e-03
+    Selected: (130,135)	Diag: 5.5442e-03
+    Selected: (223,228)	Diag: 5.5442e-03
+    Selected: (285,292)	Diag: 5.5224e-03
+    Selected: (192,199)	Diag: 5.5224e-03
+    Selected: (285,290)	Diag: 5.5223e-03
+    Selected: (192,197)	Diag: 5.5223e-03
+    Selected: (195,197)	Diag: 5.5029e-03
+    Selected: (288,290)	Diag: 5.5029e-03
+    Selected: (93,94)	Diag: 5.4632e-03
+    Selected: (93,96)	Diag: 5.4632e-03
+    Selected: (130,137)	Diag: 5.4294e-03
+    Selected: (223,230)	Diag: 5.4290e-03
+    Selected: (161,166)	Diag: 5.4260e-03
+    Selected: (254,259)	Diag: 5.4256e-03
+    Selected: (292,294)	Diag: 5.4099e-03
+    Selected: (199,201)	Diag: 5.4098e-03
+    Selected: (54,102)	Diag: 5.3671e-03
+    Selected: (56,102)	Diag: 5.3671e-03
+    Selected: (90,107)	Diag: 5.3532e-03
+    Selected: (26,58)	Diag: 5.3258e-03
+    Selected: (25,58)	Diag: 5.3213e-03
+    Selected: (14,42)	Diag: 5.3122e-03
+    Selected: (13,42)	Diag: 5.1238e-03
+    Selected: (196,198)	Diag: 5.0880e-03
+    Selected: (289,291)	Diag: 5.0880e-03
+    Selected: (162,168)	Diag: 5.0147e-03
+    Selected: (255,261)	Diag: 5.0146e-03
+    Selected: (165,167)	Diag: 5.0144e-03
+    Selected: (258,260)	Diag: 5.0144e-03
+    Selected: (134,136)	Diag: 5.0137e-03
+    Selected: (227,229)	Diag: 5.0137e-03
+    Selected: (43,76)	Diag: 5.0093e-03
+    Selected: (43,70)	Diag: 5.0091e-03
+    Selected: (193,199)	Diag: 4.9977e-03
+    Selected: (286,292)	Diag: 4.9976e-03
+    Selected: (129,135)	Diag: 4.9867e-03
+    Selected: (222,228)	Diag: 4.9862e-03
+    Selected: (9,9)	Diag: 4.8547e-03
+    Selected: (136,138)	Diag: 4.8076e-03
+    Selected: (229,231)	Diag: 4.8075e-03
+    Selected: (260,262)	Diag: 4.8060e-03
+    Selected: (167,169)	Diag: 4.8059e-03
+    Selected: (90,101)	Diag: 4.7846e-03
+    Selected: (191,197)	Diag: 4.7760e-03
+    Selected: (284,290)	Diag: 4.7757e-03
+    Selected: (253,259)	Diag: 4.7608e-03
+    Selected: (160,166)	Diag: 4.7606e-03
+    Selected: (87,102)	Diag: 4.6725e-03
+    Selected: (131,137)	Diag: 4.6619e-03
+    Selected: (264,269)	Diag: 4.6618e-03
+    Selected: (171,176)	Diag: 4.6618e-03
+    Selected: (264,270)	Diag: 4.6618e-03
+    Selected: (171,177)	Diag: 4.6618e-03
+    Selected: (224,230)	Diag: 4.6584e-03
+    Selected: (233,238)	Diag: 4.6563e-03
+    Selected: (109,115)	Diag: 4.6563e-03
+    Selected: (140,145)	Diag: 4.6563e-03
+    Selected: (202,208)	Diag: 4.6563e-03
+    Selected: (140,146)	Diag: 4.6486e-03
+    Selected: (233,239)	Diag: 4.6486e-03
+    Selected: (202,207)	Diag: 4.6485e-03
+    Selected: (109,114)	Diag: 4.6485e-03
+    Selected: (158,167)	Diag: 4.6239e-03
+    Selected: (251,260)	Diag: 4.6239e-03
+    Selected: (189,198)	Diag: 4.6098e-03
+    Selected: (282,291)	Diag: 4.6096e-03
+    Selected: (220,229)	Diag: 4.5886e-03
+    Selected: (127,136)	Diag: 4.5883e-03
+    Selected: (175,182)	Diag: 4.5600e-03
+    Selected: (46,75)	Diag: 4.5595e-03
+    Selected: (175,183)	Diag: 4.5589e-03
+    Selected: (268,275)	Diag: 4.5512e-03
+    Selected: (268,276)	Diag: 4.5505e-03
+    Selected: (59,61)	Diag: 4.3984e-03
+    Selected: (264,271)	Diag: 4.3552e-03
+    Selected: (171,178)	Diag: 4.3552e-03
+    Selected: (101,107)	Diag: 4.3342e-03
+    Selected: (101,102)	Diag: 4.3070e-03
+    Selected: (102,107)	Diag: 4.3070e-03
+    Selected: (29,39)	Diag: 4.2956e-03
+    Selected: (162,169)	Diag: 4.2816e-03
+    Selected: (255,262)	Diag: 4.2816e-03
+    Selected: (222,231)	Diag: 4.2816e-03
+    Selected: (129,138)	Diag: 4.2816e-03
+    Selected: (58,61)	Diag: 4.2496e-03
+    Selected: (58,59)	Diag: 4.2496e-03
+    Selected: (31,41)	Diag: 4.2376e-03
+    Selected: (88,100)	Diag: 4.2036e-03
+    Selected: (86,100)	Diag: 4.1993e-03
+    Selected: (129,134)	Diag: 4.1735e-03
+    Selected: (222,227)	Diag: 4.1732e-03
+    Selected: (162,165)	Diag: 4.1708e-03
+    Selected: (255,258)	Diag: 4.1705e-03
+    Selected: (163,169)	Diag: 4.1480e-03
+    Selected: (256,262)	Diag: 4.1480e-03
+    Selected: (107,108)	Diag: 4.1419e-03
+    Selected: (101,108)	Diag: 4.1403e-03
+    Selected: (35,67)	Diag: 4.1288e-03
+    Selected: (234,250)	Diag: 4.1268e-03
+    Selected: (141,157)	Diag: 4.1268e-03
+    Selected: (110,124)	Diag: 4.1268e-03
+    Selected: (203,217)	Diag: 4.1268e-03
+    Selected: (234,248)	Diag: 4.1210e-03
+    Selected: (141,155)	Diag: 4.1210e-03
+    Selected: (203,219)	Diag: 4.1207e-03
+    Selected: (110,126)	Diag: 4.1207e-03
+    Selected: (172,188)	Diag: 4.1195e-03
+    Selected: (265,281)	Diag: 4.1195e-03
+    Selected: (172,186)	Diag: 4.1194e-03
+    Selected: (265,279)	Diag: 4.1194e-03
+    Selected: (132,138)	Diag: 4.1183e-03
+    Selected: (225,231)	Diag: 4.1182e-03
+    Selected: (287,293)	Diag: 4.1166e-03
+    Selected: (194,200)	Diag: 4.1166e-03
+    Selected: (203,216)	Diag: 4.1135e-03
+    Selected: (110,123)	Diag: 4.1135e-03
+    Selected: (141,154)	Diag: 4.1135e-03
+    Selected: (234,247)	Diag: 4.1135e-03
+    Selected: (172,185)	Diag: 4.1092e-03
+    Selected: (265,278)	Diag: 4.1092e-03
+    Selected: (102,104)	Diag: 3.9778e-03
+    Selected: (284,293)	Diag: 3.9603e-03
+    Selected: (191,200)	Diag: 3.9603e-03
+    Selected: (286,293)	Diag: 3.9603e-03
+    Selected: (193,200)	Diag: 3.9603e-03
+    Selected: (89,102)	Diag: 3.9118e-03
+    Selected: (15,39)	Diag: 3.7643e-03
+    Selected: (88,106)	Diag: 3.7589e-03
+    Selected: (42,68)	Diag: 3.6915e-03
+    Selected: (35,70)	Diag: 3.6849e-03
+    Selected: (72,94)	Diag: 3.6563e-03
+    Selected: (86,106)	Diag: 3.6319e-03
+    Selected: (15,38)	Diag: 3.5890e-03
+    Selected: (74,96)	Diag: 3.5419e-03
+    Selected: (102,106)	Diag: 3.5178e-03
+    Selected: (76,91)	Diag: 3.5029e-03
+    Selected: (70,91)	Diag: 3.5024e-03
+    Selected: (272,284)	Diag: 3.4706e-03
+    Selected: (243,252)	Diag: 3.4679e-03
+    Selected: (212,221)	Diag: 3.4678e-03
+    Selected: (181,190)	Diag: 3.4667e-03
+    Selected: (150,159)	Diag: 3.4640e-03
+    Selected: (117,129)	Diag: 3.4640e-03
+    Selected: (237,244)	Diag: 3.4194e-03
+    Selected: (15,40)	Diag: 3.4150e-03
+    Selected: (287,289)	Diag: 3.4038e-03
+    Selected: (194,196)	Diag: 3.4038e-03
+    Selected: (130,134)	Diag: 3.4007e-03
+    Selected: (254,258)	Diag: 3.4007e-03
+    Selected: (161,165)	Diag: 3.4007e-03
+    Selected: (223,227)	Diag: 3.4007e-03
+    Selected: (225,227)	Diag: 3.3944e-03
+    Selected: (256,258)	Diag: 3.3944e-03
+    Selected: (128,138)	Diag: 3.3944e-03
+    Selected: (159,169)	Diag: 3.3944e-03
+    Selected: (192,196)	Diag: 3.3880e-03
+    Selected: (285,289)	Diag: 3.3880e-03
+    Selected: (113,121)	Diag: 3.3096e-03
+    Selected: (15,41)	Diag: 3.3083e-03
+    Selected: (26,59)	Diag: 3.2937e-03
+    Selected: (144,151)	Diag: 3.2132e-03
+    Selected: (37,64)	Diag: 3.1786e-03
+    Selected: (206,214)	Diag: 3.1595e-03
+    Selected: (92,92)	Diag: 3.1273e-03
+    Selected: (101,106)	Diag: 3.0824e-03
+    Selected: (106,107)	Diag: 3.0824e-03
+    Selected: (14,39)	Diag: 3.0330e-03
+    Selected: (13,41)	Diag: 2.9859e-03
+    Selected: (32,38)	Diag: 2.9712e-03
+    Selected: (224,231)	Diag: 2.8742e-03
+    Selected: (131,138)	Diag: 2.8730e-03
+    Selected: (160,169)	Diag: 2.8685e-03
+    Selected: (253,262)	Diag: 2.8672e-03
+    Selected: (35,76)	Diag: 2.7596e-03
+    Selected: (31,40)	Diag: 2.7513e-03
+    Selected: (29,40)	Diag: 2.7513e-03
+    Selected: (73,96)	Diag: 2.7168e-03
+    Selected: (73,94)	Diag: 2.6964e-03
+    Selected: (74,76)	Diag: 2.6925e-03
+    Selected: (46,71)	Diag: 2.6389e-03
+    Selected: (27,58)	Diag: 2.4917e-03
+    Selected: (190,194)	Diag: 2.4135e-03
+    Selected: (283,287)	Diag: 2.4135e-03
+    Selected: (29,41)	Diag: 2.3890e-03
+    Selected: (283,289)	Diag: 2.3469e-03
+    Selected: (190,196)	Diag: 2.3468e-03
+    Selected: (58,60)	Diag: 2.3246e-03
+    Selected: (221,227)	Diag: 2.3167e-03
+    Selected: (252,258)	Diag: 2.3143e-03
+    Selected: (128,134)	Diag: 2.3138e-03
+    Selected: (159,165)	Diag: 2.3112e-03
+    InnerLoop CDalgMV  = 2.2235e-02 s 
+    InnerLoop duration = 2.9585e-02 s 
+    pivot Size = 1166
+    D size = 3210
+    lenQ: 1000
+    ERI size = 2587
+    LevalEnd = 885
+    RevalEnd = 1844
+    SevalBegin = 2180
+    Current Shrink = 5.5460e-03 s 
+    Current ERItrans = 8.4679e-04 s 
+    Current ERI count    = 4329
+    Current ERI duration = 8.6425e-02 s 
+    Current ERIvec = 1.1627e-02 s 
+    Current ERIcopy = 1.3537e-03 s 
+    Current CDalgMM = 8.6119e-03 s 
+    Selected: (71,93)	Diag: 2.2486e-03
+    Selected: (129,130)	Diag: 2.2373e-03
+    Selected: (222,223)	Diag: 2.2373e-03
+    Selected: (254,255)	Diag: 2.2372e-03
+    Selected: (161,162)	Diag: 2.2372e-03
+    Selected: (29,38)	Diag: 2.2328e-03
+    Selected: (31,38)	Diag: 2.2328e-03
+    Selected: (252,256)	Diag: 2.2257e-03
+    Selected: (221,225)	Diag: 2.2254e-03
+    Selected: (159,163)	Diag: 2.2251e-03
+    Selected: (128,132)	Diag: 2.2248e-03
+    Selected: (159,162)	Diag: 2.1839e-03
+    Selected: (252,255)	Diag: 2.1839e-03
+    Selected: (221,222)	Diag: 2.1835e-03
+    Selected: (128,129)	Diag: 2.1835e-03
+    Selected: (190,193)	Diag: 2.1723e-03
+    Selected: (283,286)	Diag: 2.1723e-03
+    Selected: (283,284)	Diag: 2.1722e-03
+    Selected: (190,191)	Diag: 2.1722e-03
+    Selected: (76,98)	Diag: 2.1671e-03
+    Selected: (160,165)	Diag: 2.1584e-03
+    Selected: (253,258)	Diag: 2.1584e-03
+    Selected: (129,132)	Diag: 2.1568e-03
+    Selected: (255,256)	Diag: 2.1568e-03
+    Selected: (222,225)	Diag: 2.1568e-03
+    Selected: (162,163)	Diag: 2.1568e-03
+    Selected: (131,134)	Diag: 2.1556e-03
+    Selected: (224,227)	Diag: 2.1555e-03
+    Selected: (160,161)	Diag: 2.1294e-03
+    Selected: (253,254)	Diag: 2.1294e-03
+    Selected: (223,224)	Diag: 2.1283e-03
+    Selected: (130,131)	Diag: 2.1282e-03
+    Selected: (284,289)	Diag: 2.1149e-03
+    Selected: (191,196)	Diag: 2.1148e-03
+    Selected: (286,289)	Diag: 2.1146e-03
+    Selected: (193,196)	Diag: 2.1145e-03
+    Selected: (45,45)	Diag: 2.0883e-03
+    Selected: (221,224)	Diag: 2.0683e-03
+    Selected: (128,131)	Diag: 2.0683e-03
+    Selected: (159,160)	Diag: 2.0680e-03
+    Selected: (252,253)	Diag: 2.0680e-03
+    Selected: (192,193)	Diag: 2.0679e-03
+    Selected: (285,286)	Diag: 2.0676e-03
+    Selected: (191,192)	Diag: 2.0670e-03
+    Selected: (284,285)	Diag: 2.0667e-03
+    Selected: (75,91)	Diag: 2.0632e-03
+    Selected: (59,62)	Diag: 1.9999e-03
+    Selected: (61,62)	Diag: 1.9999e-03
+    Selected: (286,287)	Diag: 1.9907e-03
+    Selected: (191,194)	Diag: 1.9906e-03
+    Selected: (193,194)	Diag: 1.9906e-03
+    Selected: (284,287)	Diag: 1.9906e-03
+    Selected: (73,93)	Diag: 1.9730e-03
+    Selected: (71,92)	Diag: 1.9716e-03
+    Selected: (75,92)	Diag: 1.9236e-03
+    Selected: (160,163)	Diag: 1.9177e-03
+    Selected: (253,256)	Diag: 1.9164e-03
+    Selected: (74,97)	Diag: 1.9134e-03
+    Selected: (131,132)	Diag: 1.9095e-03
+    Selected: (224,225)	Diag: 1.9087e-03
+    Selected: (32,39)	Diag: 1.8494e-03
+    Selected: (31,42)	Diag: 1.8494e-03
+    Selected: (84,101)	Diag: 1.7662e-03
+    Selected: (74,93)	Diag: 1.7296e-03
+    Selected: (71,99)	Diag: 1.6766e-03
+    Selected: (27,61)	Diag: 1.6591e-03
+    Selected: (63,70)	Diag: 1.6578e-03
+    Selected: (27,59)	Diag: 1.6486e-03
+    Selected: (75,93)	Diag: 1.6413e-03
+    Selected: (283,285)	Diag: 1.6156e-03
+    Selected: (190,192)	Diag: 1.6156e-03
+    Selected: (221,223)	Diag: 1.5976e-03
+    Selected: (128,130)	Diag: 1.5975e-03
+    Selected: (159,161)	Diag: 1.5973e-03
+    Selected: (252,254)	Diag: 1.5972e-03
+    Selected: (65,72)	Diag: 1.5939e-03
+    Selected: (67,74)	Diag: 1.5801e-03
+    Selected: (252,263)	Diag: 1.5657e-03
+    Selected: (159,170)	Diag: 1.5657e-03
+    Selected: (221,226)	Diag: 1.5645e-03
+    Selected: (128,133)	Diag: 1.5645e-03
+    Selected: (32,40)	Diag: 1.5636e-03
+    Selected: (30,38)	Diag: 1.5618e-03
+    Selected: (73,95)	Diag: 1.5353e-03
+    Selected: (144,153)	Diag: 1.5221e-03
+    Selected: (237,246)	Diag: 1.5206e-03
+    Selected: (113,122)	Diag: 1.5022e-03
+    Selected: (24,93)	Diag: 1.4996e-03
+    Selected: (206,215)	Diag: 1.4990e-03
+    Selected: (128,139)	Diag: 1.4882e-03
+    Selected: (221,232)	Diag: 1.4882e-03
+    Selected: (252,257)	Diag: 1.4881e-03
+    Selected: (159,164)	Diag: 1.4881e-03
+    Selected: (130,132)	Diag: 1.4764e-03
+    Selected: (223,225)	Diag: 1.4763e-03
+    Selected: (161,163)	Diag: 1.4755e-03
+    Selected: (254,256)	Diag: 1.4754e-03
+    Selected: (47,47)	Diag: 1.4494e-03
+    Selected: (43,43)	Diag: 1.4342e-03
+    Selected: (63,76)	Diag: 1.4121e-03
+    Selected: (45,96)	Diag: 1.3646e-03
+    Selected: (45,94)	Diag: 1.3646e-03
+    Selected: (36,75)	Diag: 1.3643e-03
+    Selected: (30,40)	Diag: 1.3452e-03
+    Selected: (58,62)	Diag: 1.3375e-03
+    Selected: (283,288)	Diag: 1.2740e-03
+    Selected: (283,294)	Diag: 1.2739e-03
+    Selected: (190,195)	Diag: 1.2693e-03
+    Selected: (190,201)	Diag: 1.2692e-03
+    Selected: (47,91)	Diag: 1.0898e-03
+    Selected: (39,68)	Diag: 1.0606e-03
+    Selected: (285,288)	Diag: 1.0551e-03
+    Selected: (285,294)	Diag: 1.0551e-03
+    Selected: (192,195)	Diag: 1.0550e-03
+    Selected: (192,201)	Diag: 1.0550e-03
+    Selected: (59,86)	Diag: 1.0355e-03
+    Selected: (43,99)	Diag: 1.0355e-03
+    Selected: (44,92)	Diag: 1.0280e-03
+    Selected: (46,98)	Diag: 1.0272e-03
+    Selected: (46,97)	Diag: 1.0155e-03
+    Selected: (44,97)	Diag: 1.0155e-03
+    Selected: (130,139)	Diag: 9.6450e-04
+    Selected: (223,232)	Diag: 9.6447e-04
+    Selected: (254,257)	Diag: 9.6439e-04
+    Selected: (161,164)	Diag: 9.6436e-04
+    Selected: (37,75)	Diag: 9.5568e-04
+    Selected: (64,72)	Diag: 9.3421e-04
+    Selected: (64,74)	Diag: 9.3421e-04
+    Selected: (50,55)	Diag: 9.0949e-04
+    Selected: (64,70)	Diag: 9.0342e-04
+    Selected: (69,71)	Diag: 9.0342e-04
+    Selected: (58,100)	Diag: 8.7769e-04
+    Selected: (33,63)	Diag: 8.6980e-04
+    Selected: (33,69)	Diag: 8.6680e-04
+    Selected: (64,75)	Diag: 8.5479e-04
+    Selected: (47,92)	Diag: 8.4471e-04
+    Selected: (47,98)	Diag: 8.4471e-04
+    Selected: (223,226)	Diag: 8.3128e-04
+    Selected: (161,170)	Diag: 8.3045e-04
+    Selected: (130,133)	Diag: 8.2843e-04
+    Selected: (254,263)	Diag: 8.2743e-04
+    Selected: (60,61)	Diag: 8.1460e-04
+    Selected: (59,60)	Diag: 8.1460e-04
+    Selected: (75,97)	Diag: 8.0732e-04
+    Selected: (194,198)	Diag: 8.0301e-04
+    Selected: (287,291)	Diag: 8.0301e-04
+    Selected: (91,100)	Diag: 7.8036e-04
+    Selected: (79,103)	Diag: 7.7952e-04
+    Selected: (64,71)	Diag: 7.5713e-04
+    Selected: (64,73)	Diag: 7.4411e-04
+    Selected: (99,108)	Diag: 7.3858e-04
+    Selected: (80,104)	Diag: 7.3185e-04
+    Selected: (225,229)	Diag: 7.2785e-04
+    Selected: (132,136)	Diag: 7.2717e-04
+    Selected: (83,108)	Diag: 7.1305e-04
+    Selected: (163,167)	Diag: 7.1254e-04
+    Selected: (256,260)	Diag: 7.1247e-04
+    Selected: (77,108)	Diag: 7.1057e-04
+    Selected: (58,89)	Diag: 7.0979e-04
+    Selected: (25,62)	Diag: 7.0333e-04
+    Selected: (26,62)	Diag: 7.0277e-04
+    Selected: (35,64)	Diag: 6.9499e-04
+    Selected: (81,105)	Diag: 6.9246e-04
+    Selected: (62,62)	Diag: 6.7935e-04
+    Selected: (66,74)	Diag: 6.5146e-04
+    Selected: (66,72)	Diag: 6.5146e-04
+    Selected: (46,92)	Diag: 6.4839e-04
+    Selected: (44,98)	Diag: 6.3935e-04
+    Selected: (88,88)	Diag: 6.0860e-04
+    Selected: (42,69)	Diag: 6.0124e-04
+    Selected: (42,63)	Diag: 6.0090e-04
+    Selected: (66,73)	Diag: 5.8519e-04
+    Selected: (60,85)	Diag: 5.7369e-04
+    Selected: (33,71)	Diag: 5.6932e-04
+    Selected: (50,102)	Diag: 5.6265e-04
+    Selected: (37,73)	Diag: 5.4895e-04
+    Selected: (82,107)	Diag: 5.4710e-04
+    Selected: (78,107)	Diag: 5.4209e-04
+    Selected: (86,86)	Diag: 5.4104e-04
+    Selected: (44,93)	Diag: 5.2212e-04
+    Selected: (46,93)	Diag: 5.2212e-04
+    Selected: (234,240)	Diag: 5.1951e-04
+    Selected: (141,147)	Diag: 5.1951e-04
+    Selected: (203,209)	Diag: 5.1947e-04
+    Selected: (110,116)	Diag: 5.1947e-04
+    Selected: (2,3)	Diag: 5.1650e-04
+    Selected: (45,91)	Diag: 5.0475e-04
+    Selected: (61,88)	Diag: 4.9639e-04
+    Selected: (40,63)	Diag: 4.8949e-04
+    Selected: (40,69)	Diag: 4.8939e-04
+    Selected: (78,102)	Diag: 4.8031e-04
+    Selected: (35,72)	Diag: 4.7684e-04
+    Selected: (35,74)	Diag: 4.7586e-04
+    Selected: (82,106)	Diag: 4.6277e-04
+    Selected: (87,101)	Diag: 4.5983e-04
+    Selected: (87,107)	Diag: 4.5852e-04
+    Selected: (94,103)	Diag: 4.3194e-04
+    Selected: (62,100)	Diag: 4.3108e-04
+    Selected: (250,251)	Diag: 4.2320e-04
+    Selected: (157,158)	Diag: 4.2320e-04
+    Selected: (124,127)	Diag: 4.2320e-04
+    Selected: (217,220)	Diag: 4.2320e-04
+    Selected: (185,188)	Diag: 4.2029e-04
+    Selected: (278,281)	Diag: 4.2028e-04
+    Selected: (185,186)	Diag: 4.2027e-04
+    Selected: (278,279)	Diag: 4.2027e-04
+    Selected: (96,105)	Diag: 4.2007e-04
+    Selected: (216,217)	Diag: 4.1968e-04
+    Selected: (123,124)	Diag: 4.1968e-04
+    Selected: (247,250)	Diag: 4.1967e-04
+    Selected: (154,157)	Diag: 4.1967e-04
+    InnerLoop CDalgMV  = 4.4524e-03 s 
+    InnerLoop duration = 1.0058e-02 s 
+    pivot Size = 1377
+    D size = 953
+    lenQ: 953
+    ERI size = 953
+    LevalEnd = 899
+    RevalEnd = 953
+    SevalBegin = 953
+    Current Shrink = 1.6983e-03 s 
+    Current ERItrans = 4.6067e-05 s 
+    Current ERI count    = 210
+    Current ERI duration = 9.8670e-03 s 
+    Current ERIvec = 4.3365e-03 s 
+    Current ERIcopy = 2.8404e-04 s 
+    Current CDalgMM = 3.5281e-03 s 
+    Selected: (47,99)	Diag: 4.1550e-04
+    Selected: (97,106)	Diag: 4.0643e-04
+    Selected: (47,96)	Diag: 4.0441e-04
+    Selected: (47,94)	Diag: 4.0441e-04
+    Selected: (93,102)	Diag: 4.0330e-04
+    Selected: (77,104)	Diag: 3.8993e-04
+    Selected: (83,104)	Diag: 3.8942e-04
+    Selected: (62,101)	Diag: 3.8783e-04
+    Selected: (62,107)	Diag: 3.8783e-04
+    Selected: (99,100)	Diag: 3.8007e-04
+    Selected: (79,106)	Diag: 3.7943e-04
+    Selected: (34,72)	Diag: 3.7850e-04
+    Selected: (271,280)	Diag: 3.7258e-04
+    Selected: (178,187)	Diag: 3.7258e-04
+    Selected: (80,105)	Diag: 3.6531e-04
+    Selected: (38,66)	Diag: 3.6165e-04
+    Selected: (80,103)	Diag: 3.5586e-04
+    Selected: (78,101)	Diag: 3.5526e-04
+    Selected: (80,108)	Diag: 3.5178e-04
+    Selected: (37,42)	Diag: 3.5048e-04
+    Selected: (85,85)	Diag: 3.4790e-04
+    Selected: (59,102)	Diag: 3.4381e-04
+    Selected: (61,102)	Diag: 3.4381e-04
+    Selected: (34,64)	Diag: 3.4050e-04
+    Selected: (33,38)	Diag: 3.3943e-04
+    Selected: (82,101)	Diag: 3.3816e-04
+    Selected: (34,68)	Diag: 3.3707e-04
+    Selected: (81,106)	Diag: 3.2707e-04
+    Selected: (77,101)	Diag: 3.2253e-04
+    Selected: (45,97)	Diag: 3.2141e-04
+    Selected: (185,187)	Diag: 3.1540e-04
+    Selected: (278,280)	Diag: 3.1540e-04
+    Selected: (247,249)	Diag: 3.1270e-04
+    Selected: (154,156)	Diag: 3.1270e-04
+    Selected: (216,218)	Diag: 3.1270e-04
+    Selected: (123,125)	Diag: 3.1270e-04
+    Selected: (43,98)	Diag: 3.0817e-04
+    Selected: (43,92)	Diag: 3.0817e-04
+    Selected: (268,277)	Diag: 3.0503e-04
+    Selected: (280,282)	Diag: 3.0421e-04
+    Selected: (187,189)	Diag: 3.0421e-04
+    Selected: (34,39)	Diag: 3.0273e-04
+    Selected: (36,41)	Diag: 3.0100e-04
+    Selected: (175,184)	Diag: 3.0065e-04
+    Selected: (9,244)	Diag: 2.9847e-04
+    Selected: (9,151)	Diag: 2.9844e-04
+    Selected: (9,276)	Diag: 2.9708e-04
+    Selected: (9,183)	Diag: 2.9707e-04
+    Selected: (59,107)	Diag: 2.8726e-04
+    Selected: (9,182)	Diag: 2.8491e-04
+    Selected: (9,275)	Diag: 2.8427e-04
+    Selected: (94,104)	Diag: 2.8039e-04
+    Selected: (95,105)	Diag: 2.8039e-04
+    Selected: (207,220)	Diag: 2.7384e-04
+    Selected: (114,127)	Diag: 2.7383e-04
+    Selected: (239,251)	Diag: 2.7375e-04
+    Selected: (146,158)	Diag: 2.7374e-04
+    Selected: (61,101)	Diag: 2.6978e-04
+    Selected: (114,123)	Diag: 2.6826e-04
+    Selected: (207,216)	Diag: 2.6826e-04
+    Selected: (87,89)	Diag: 2.6728e-04
+    Selected: (60,103)	Diag: 2.6182e-04
+    Selected: (60,105)	Diag: 2.6182e-04
+    Selected: (37,71)	Diag: 2.6142e-04
+    Selected: (146,154)	Diag: 2.5696e-04
+    Selected: (239,247)	Diag: 2.5696e-04
+    Selected: (270,282)	Diag: 2.5688e-04
+    Selected: (177,189)	Diag: 2.5688e-04
+    Selected: (269,282)	Diag: 2.5677e-04
+    Selected: (176,189)	Diag: 2.5677e-04
+    Selected: (68,74)	Diag: 2.5236e-04
+    Selected: (68,72)	Diag: 2.5236e-04
+    Selected: (36,74)	Diag: 2.5229e-04
+    Selected: (272,275)	Diag: 2.4051e-04
+    Selected: (180,183)	Diag: 2.4010e-04
+    Selected: (80,102)	Diag: 2.3851e-04
+    Selected: (77,100)	Diag: 2.3647e-04
+    Selected: (83,107)	Diag: 2.3434e-04
+    Selected: (82,100)	Diag: 2.3431e-04
+    Selected: (83,100)	Diag: 2.3085e-04
+    Selected: (92,101)	Diag: 2.2873e-04
+    Selected: (150,153)	Diag: 2.2851e-04
+    Selected: (243,246)	Diag: 2.2847e-04
+    Selected: (119,122)	Diag: 2.2798e-04
+    Selected: (212,215)	Diag: 2.2795e-04
+    Selected: (121,244)	Diag: 2.2194e-04
+    Selected: (151,214)	Diag: 2.2193e-04
+    Selected: (68,70)	Diag: 2.2117e-04
+    Selected: (68,76)	Diag: 2.2117e-04
+    Selected: (98,101)	Diag: 2.2059e-04
+    Selected: (9,246)	Diag: 2.1907e-04
+    Selected: (62,89)	Diag: 2.1689e-04
+    Selected: (9,122)	Diag: 2.1332e-04
+    Selected: (82,102)	Diag: 2.1317e-04
+    Selected: (93,104)	Diag: 2.1267e-04
+    Selected: (121,151)	Diag: 2.1068e-04
+    Selected: (214,244)	Diag: 2.1049e-04
+    Selected: (58,84)	Diag: 2.0773e-04
+    Selected: (9,215)	Diag: 2.0760e-04
+    Selected: (99,101)	Diag: 2.0733e-04
+    Selected: (99,107)	Diag: 2.0733e-04
+    Selected: (58,90)	Diag: 2.0670e-04
+    Selected: (9,153)	Diag: 2.0547e-04
+    Selected: (61,85)	Diag: 2.0157e-04
+    Selected: (247,260)	Diag: 2.0146e-04
+    Selected: (216,229)	Diag: 2.0146e-04
+    Selected: (154,167)	Diag: 2.0145e-04
+    Selected: (123,136)	Diag: 2.0145e-04
+    Selected: (278,291)	Diag: 2.0140e-04
+    Selected: (185,198)	Diag: 2.0139e-04
+    Selected: (59,85)	Diag: 1.9795e-04
+    Selected: (44,44)	Diag: 1.9623e-04
+    Selected: (45,93)	Diag: 1.9048e-04
+    Selected: (273,276)	Diag: 1.8928e-04
+    Selected: (179,182)	Diag: 1.8918e-04
+    Selected: (97,102)	Diag: 1.8907e-04
+    Selected: (93,107)	Diag: 1.8530e-04
+    Selected: (93,101)	Diag: 1.8530e-04
+    Selected: (258,259)	Diag: 1.8047e-04
+    Selected: (165,166)	Diag: 1.8047e-04
+    Selected: (227,230)	Diag: 1.8045e-04
+    Selected: (134,137)	Diag: 1.8045e-04
+    Selected: (62,108)	Diag: 1.7940e-04
+    Selected: (148,151)	Diag: 1.7762e-04
+    Selected: (241,244)	Diag: 1.7762e-04
+    Selected: (43,83)	Diag: 1.7650e-04
+    Selected: (43,77)	Diag: 1.7602e-04
+    Selected: (211,214)	Diag: 1.7501e-04
+    Selected: (118,121)	Diag: 1.7499e-04
+    Selected: (166,169)	Diag: 1.7266e-04
+    Selected: (259,262)	Diag: 1.7266e-04
+    Selected: (230,231)	Diag: 1.7255e-04
+    Selected: (137,138)	Diag: 1.7255e-04
+    Selected: (9,121)	Diag: 1.6740e-04
+    Selected: (9,214)	Diag: 1.6665e-04
+    Selected: (50,108)	Diag: 1.6578e-04
+    Selected: (206,213)	Diag: 1.6501e-04
+    Selected: (58,108)	Diag: 1.6483e-04
+    Selected: (78,108)	Diag: 1.6335e-04
+    Selected: (246,276)	Diag: 1.6185e-04
+    Selected: (153,183)	Diag: 1.6181e-04
+    Selected: (122,182)	Diag: 1.6151e-04
+    Selected: (94,102)	Diag: 1.6128e-04
+    Selected: (93,105)	Diag: 1.6128e-04
+    Selected: (36,39)	Diag: 1.6082e-04
+    Selected: (122,275)	Diag: 1.6010e-04
+    Selected: (153,276)	Diag: 1.6001e-04
+    Selected: (183,246)	Diag: 1.6000e-04
+    Selected: (0,32)	Diag: 1.5567e-04
+    Selected: (0,31)	Diag: 1.5541e-04
+    Selected: (0,29)	Diag: 1.5541e-04
+    Selected: (0,28)	Diag: 1.5541e-04
+    Selected: (51,106)	Diag: 1.5386e-04
+    Selected: (35,73)	Diag: 1.5371e-04
+    Selected: (49,106)	Diag: 1.5365e-04
+    Selected: (182,215)	Diag: 1.5114e-04
+    Selected: (215,275)	Diag: 1.5096e-04
+    Selected: (35,42)	Diag: 1.4894e-04
+    Selected: (67,70)	Diag: 1.4787e-04
+    Selected: (197,200)	Diag: 1.4525e-04
+    Selected: (58,85)	Diag: 1.4523e-04
+    Selected: (199,200)	Diag: 1.4518e-04
+    Selected: (290,293)	Diag: 1.4501e-04
+    Selected: (292,293)	Diag: 1.4494e-04
+    Selected: (65,76)	Diag: 1.4477e-04
+    Selected: (89,89)	Diag: 1.4137e-04
+    Selected: (113,120)	Diag: 1.4067e-04
+    Selected: (195,199)	Diag: 1.3984e-04
+    Selected: (290,294)	Diag: 1.3984e-04
+    Selected: (288,292)	Diag: 1.3960e-04
+    Selected: (197,201)	Diag: 1.3960e-04
+    Selected: (80,100)	Diag: 1.3934e-04
+    Selected: (262,263)	Diag: 1.3713e-04
+    Selected: (169,170)	Diag: 1.3713e-04
+    Selected: (133,138)	Diag: 1.3712e-04
+    Selected: (226,231)	Diag: 1.3712e-04
+    Selected: (0,30)	Diag: 1.3658e-04
+    Selected: (44,74)	Diag: 1.3324e-04
+    Selected: (237,245)	Diag: 1.3220e-04
+    Selected: (135,139)	Diag: 1.3132e-04
+    Selected: (228,232)	Diag: 1.3132e-04
+    Selected: (257,261)	Diag: 1.3126e-04
+    Selected: (164,168)	Diag: 1.3126e-04
+    Selected: (144,152)	Diag: 1.3111e-04
+    Selected: (274,277)	Diag: 1.3105e-04
+    Selected: (181,184)	Diag: 1.3105e-04
+    Selected: (2,2)	Diag: 1.2814e-04
+    Selected: (293,294)	Diag: 1.2800e-04
+    Selected: (200,201)	Diag: 1.2800e-04
+    Selected: (195,200)	Diag: 1.2799e-04
+    Selected: (288,293)	Diag: 1.2799e-04
+    Selected: (44,71)	Diag: 1.2452e-04
+    Selected: (202,220)	Diag: 1.2003e-04
+    Selected: (109,127)	Diag: 1.2003e-04
+    Selected: (233,251)	Diag: 1.2003e-04
+    Selected: (140,158)	Diag: 1.2003e-04
+    Selected: (44,75)	Diag: 1.1943e-04
+    Selected: (202,218)	Diag: 1.1897e-04
+    Selected: (109,125)	Diag: 1.1897e-04
+    Selected: (233,249)	Diag: 1.1897e-04
+    Selected: (140,156)	Diag: 1.1897e-04
+    Selected: (171,187)	Diag: 1.1863e-04
+    Selected: (264,280)	Diag: 1.1863e-04
+    Selected: (69,91)	Diag: 1.1787e-04
+    Selected: (63,91)	Diag: 1.1786e-04
+    Selected: (226,228)	Diag: 1.1212e-04
+    Selected: (133,135)	Diag: 1.1210e-04
+    Selected: (60,86)	Diag: 1.1207e-04
+    Selected: (165,170)	Diag: 1.1065e-04
+    Selected: (258,263)	Diag: 1.1064e-04
+    Selected: (226,227)	Diag: 1.1042e-04
+    Selected: (133,134)	Diag: 1.1041e-04
+    Selected: (168,170)	Diag: 1.0949e-04
+    Selected: (261,263)	Diag: 1.0937e-04
+    Selected: (166,170)	Diag: 1.0895e-04
+    Selected: (259,263)	Diag: 1.0891e-04
+    Selected: (226,230)	Diag: 1.0801e-04
+    Selected: (133,137)	Diag: 1.0800e-04
+    Selected: (67,96)	Diag: 1.0734e-04
+    Selected: (275,287)	Diag: 1.0731e-04
+    Selected: (182,194)	Diag: 1.0731e-04
+    Selected: (183,194)	Diag: 1.0726e-04
+    Selected: (276,287)	Diag: 1.0726e-04
+    Selected: (65,94)	Diag: 1.0679e-04
+    Selected: (60,100)	Diag: 1.0536e-04
+    Selected: (60,88)	Diag: 1.0508e-04
+    Selected: (85,90)	Diag: 1.0475e-04
+    Selected: (84,85)	Diag: 1.0475e-04
+    Selected: (37,39)	Diag: 1.0198e-04
+    Selected: (37,41)	Diag: 1.0198e-04
+    Selected: (246,254)	Diag: 1.0062e-04
+    Selected: (153,161)	Diag: 1.0061e-04
+    Selected: (215,223)	Diag: 1.0050e-04
+    Selected: (122,130)	Diag: 1.0050e-04
+    InnerLoop CDalgMV  = 3.0819e-03 s 
+    InnerLoop duration = 1.0112e-02 s 
+    pivot Size = 1611
+  Cholesky-RI-Pivots-ERI count    = 455364
+  Cholesky-RI-Pivots-ERI duration = 5.8812e+00 s 
+  Cholesky-RI-ERIvec duration     = 3.2110e-01 s 
+  Cholesky-RI-ERIcopy duration    = 2.2157e-02 s 
+  Cholesky-RI-ERItrans duration   = 1.1249e-02 s 
+  Cholesky-RI-CDalgMM duration    = 5.4636e-02 s 
+  Cholesky-RI-CDalgMV duration    = 8.1901e-02 s 
+  Cholesky-RI-Shrink count        = 7
+  Cholesky-RI-Shrink duration     = 7.7577e-02 s 
+  Cholesky-RI-misc duration       = 1.3464e-01 s 
+  Cholesky-RI-Dynamic-ERI-Pivots duration = 7.0326e-01 s 
+  Cholesky-RI auxiliary-dimension = 1611
+
+Build 3-index RIERI tensor:
+  ----------------------------------------------------------------------------  
+  Cholesky-RI-PivotRI-ERI count       = 1000800
+  Cholesky-RI-PivotRI-ERI duration    = 1.5287e+01 s 
+  Cholesky-RI-PivotRI-3index duration = 6.6046e-01 s 
+  Cholesky-RI-PivotRI-2index duration = 1.5070e-03 s 
+  RI-ERI3-Transformation-Cholesky duration = 3.6198e-03 s 
+  RI-ERI3-Transformation-TriInv duration   = 6.6900e-03 s 
+  RI-ERI3-Transformation-Gemm duration     = 2.7967e-01 s 
+  RI-ERI3-Transformation-Copy duration     = 2.2278e-01 s 
+  RI-ERI3-Transformation duration = 5.1288e-01 s 
+  Cholesky-RI-PivotRI duration = 1.1749e+00 s 
+
+Cholesky-RI duration = 2.0223e+00 s 
+
+================================================================================
+
+Timing Summary:
+================================================================================
+  Section                            Total Duration (s)    Average Duration (s)
+--------------------------------------------------------------------------------
+  Total program time            :               16.7431
+  - Memory allocation           :               14.6874
+================================================================================
+
+
+ChronusQ Job Ended: Wed Aug 11 10:14:37 2021
+
