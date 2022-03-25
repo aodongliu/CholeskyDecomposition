@@ -1,0 +1,37 @@
+        # Add key-value pairs for the cumulative data
+        if 'Cholesky-RI-Pivots-ERI count' in line:
+            dynamicERITotal['N1ERI'] = int(line.split('= ')[-1])
+            
+        if 'Cholesky-RI-Pivots-ERI duration' in line:
+            dynamicERITotal['T1ERI_AllThreads'] = float(line.split('= ')[-1].split()[0])
+ 
+        if 'Cholesky-RI-ERIvec duration     =' in line:
+            dynamicERITotal['T1ERI_WC'] = float(line.split('= ')[-1].split()[0])
+
+        if 'Cholesky-RI-ERIcopy duration    =' in line:
+            dynamicERITotal['ERIcopy'] = float(line.split('= ')[-1].split()[0])
+
+        if 'Cholesky-RI-ERItrans duration   =' in line:
+            dynamicERITotal['ERItrans'] = float(line.split('= ')[-1].split()[0])
+
+        if 'Cholesky-RI-CDalgMM duration    =' in line:
+            dynamicERITotal['CDalgMM'] = float(line.split('= ')[-1].split()[0])
+
+        if 'Cholesky-RI-CDalgMV duration    =' in line:
+            dynamicERITotal['CDalgMV'] = float(line.split('= ')[-1].split()[0])
+
+        if 'Cholesky-RI-Shrink count        =' in line:
+            dynamicERITotal['NShrink'] = int(line.split('= ')[-1])
+
+        if 'Cholesky-RI-Shrink duration     =' in line:
+            dynamicERITotal['TShrink'] = float(line.split('= ')[-1].split()[0])
+
+        if 'Cholesky-RI-misc duration       =' in line:
+            dynamicERITotal['misc'] = float(line.split('= ')[-1].split()[0])
+
+
+        if 'Cholesky-RI-Dynamic-ERI-Pivots duration =' in line:
+            dynamicERITotal['T1'] = float(line.split('= ')[-1].split()[0])
+
+        if 'Cholesky-RI-auxiliary dimension =' in line:
+            dynamicERITotal['NPivots'] = int(line.split('= ')[-1])
